@@ -1,0 +1,10 @@
+{% extends "blog/generic_base.html" %}
+
+{% block head %}
+<title>Contact</title>
+{% endblock %}
+
+{% block content %}
+<h2>Contact</h2>
+{{contact.info|safe|urlize}}
+{% endblock %}

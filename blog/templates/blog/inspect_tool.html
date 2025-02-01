@@ -1,0 +1,15 @@
+{% extends "blog/generic_base.html" %}
+{% block head %}
+<title>inspect_tool</title>
+{% endblock %}
+
+{% block content %}
+<p>Inspect Tool </p>
+<form action='' method='POST'>
+	{% csrf_token %}
+	<input id="url" type="text"> 
+	<textArea readonly id="result" name="textarea"></textArea>
+	<input id="submit-button" type="button" value="submit">
+</form>
+
+{% endblock %}

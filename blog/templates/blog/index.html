@@ -1,0 +1,32 @@
+{% extends "blog/generic_base.html" %}
+{% block head %}
+  <title>Home</title>
+  <script>
+  let BASE_URL = "{% url 'blog:index' %}";
+  let DETAIL_URL = "{% url 'blog:detail' 4 %}";
+  </script>
+{% endblock %}
+
+  {% block content %}
+  <h2 class"h2-header"> Explore</h2> 
+  <div class="frame">
+	  <a href="" id="url" class="post-index">
+	<img src="" class="featuredImage">welcome</img></a></div>
+
+		  <br>
+   <h2 class="h2-header"> Recent Articles</h2>
+{% if posts %}
+{% for post in posts %}
+<a href="{% url 'blog:detail' post.id %}" class="post-index">
+	<article class="post">
+		<h2 class="title" >{{post.title}}</h2>
+		<p>{{post.preview|safe}}</p>
+	</article>
+</a>
+<hr>
+{% endfor %}
+{% else %}
+<article> No posts available </article>
+{% endif %} 	
+	{% endblock %}
+
