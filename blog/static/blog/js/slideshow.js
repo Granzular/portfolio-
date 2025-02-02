@@ -41,12 +41,12 @@ function doAjax(e){
 console.log("hello");
 
 function imageSlide(e){
-   slides= ["images/tech_background01.jpg","images/tech_background02.jpg","images/tech_background03.jpg","images/tech_background04.jpg","images/tech_background05.jpg"];
+   slides= ["images/tech_background01.jpg","images/tech_background02.jpg","images/tech_background03.jpg"];
 
     imgEl = document.getElementsByClassName("featuredImage")[0];
     slider(slides,imgEl,0);
 	function slider(slides,imgEl,c){
-    if (c>4){c=0;}
+    if (c>2){c=0;}
 	imgEl.src = STATIC_URL + slides[c];
 	c++;
 	setTimeout(slider,3000,slides,imgEl,c);

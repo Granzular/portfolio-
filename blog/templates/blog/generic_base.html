@@ -5,7 +5,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'blog/css/style.css'%}"/>
 <link rel="stylesheet" href="{% static 'blog/css/topmenu.css' %}" />
-<link rel="icon" type="image/png" href="{% static 'blog/images/nmaplogo.png' %}"/>
+<link rel="icon" type="image/png" href="{% static 'blog/images/favicon.png' %}"/>
 <script>
 	STATIC_URL = "{% static 'blog/'  %}"
 	AJAX_URL = "{% url 'blog:ajaxIndex' %}"
@@ -17,7 +17,7 @@
 <script type="text/javascript" defer src="{% static 'blog/js/slideshow.js' %}"></script>
 <style>
 header{
- background-image:url("{% static 'blog/images/tech_background10.jpg' %}");
+ background-image:url("{% static 'blog/images/website_header_background.jpg' %}");
  background-repeat:no-repeat;
  width:100%;
 }
