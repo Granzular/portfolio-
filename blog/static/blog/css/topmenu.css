@@ -1,0 +1,53 @@
+
+  menu#top-menu{
+    transform: translateX(0);
+    transition: transform 30s ease-in-out;
+    padding-left:0;
+    display:none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width:40%;
+    height:100%;
+    position:fixed;
+    left:0;
+    margin-top:50px;
+    display:none;
+    border-radius:3px;
+    background-color:white;
+    opacity:100%;
+    z-index:5000;
+    animation-name:slide;
+    animation-duration:2s;
+    
+  }
+  @keyframe slide{
+    from{width:0;}
+    to{width:45%;}
+  }
+ menu#top-menu li{
+    padding-bottom:10px;
+    list-style:none;
+    width:100%;
+    padding-left:10px;
+    letter-spacing:1px;
+
+    
+     
+  }
+  menu#top-menu a{
+    text-decoration:none;
+    color:black; 
+    width:100%;
+
+  }
+  img#top-menu-icon{
+    position:fixed;
+    margin-right:30px;
+    left:5px;
+    width:30px;
+    height:30px;
+    z-index:2000;
+    	
+
+  }
+  
+
