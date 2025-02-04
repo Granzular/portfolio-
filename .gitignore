@@ -4,7 +4,8 @@
 # Env 
 .env 
 myvenv/ 
-venv/  
+venv/ 
+.venv/
 # Database
 db.sqlite3 
 # Static folder at project root
