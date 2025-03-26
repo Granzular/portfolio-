@@ -1,0 +1,34 @@
+{% extends "blog/generic_base.html" %}
+
+{% block head  %}
+<title>adderTest</title>
+{% load static %}
+<script type="text/javascript" src="{% static 'blog/js/adderTest/quiz.js' %}">
+{% endblock %}
+
+{% block content %}
+<h2>AdderTest</h2>
+{% if questions %}
+{% for question in questions %}
+<form id="{{question.id}}">
+	{% csrf_token %}
+    <fieldset>
+	    <p>{{question.text}}</p>
+	    {% if question.options.all %}
+	    {% for option in question.options.all %}
+	    <input name="option" type="radio" value="{{option.id}}"><label >{{option.text}}</label><br>
+	    {% endfor %}
+	    {% else %}
+	    <p> no options are available</p>
+	    {% endif %}
+    </fieldset>
+</form><br>
+{% endfor %}
+<button id="submit-button" >Submit</button>
+
+
+
+{% else %}
+<p> Thank you for attempting the test !</p>
+{% endif %}
+{% endblock %}

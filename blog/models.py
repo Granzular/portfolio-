@@ -46,3 +46,37 @@ class Contact(models.Model):
     info = models.TextField() 
     socials = models.TextField()
     additional_info = models.TextField()
+
+class Question(models.Model):
+    text = models.TextField()
+    answer = models.OneToOneField("Option",on_delete=models.CASCADE,related_name="correct_answer",null=True)
+    def __str__(self):
+        return self.text[:20]
+
+class Option(models.Model):
+    text = models.CharField(max_length=200)
+    question = models.ForeignKey(Question,on_delete=models.CASCADE,related_name="options",null=True)
+
+    def __str__(self):
+        return self.text
+
+class UserScore(models.Model):
+    score = models.IntegerField()
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
+
+
+class Quiz(models.Model):
+    name = models.CharField(max_length=150)
+    description = models.CharField(max_length=250)
+    questions = models.ManyToManyField(Question)
+    users_who_attempted = models.ManyToManyField(User,blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Quizes"
+

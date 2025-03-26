@@ -34,3 +34,5 @@ wiz.sh
 log
 .log
 logfile
+#vim
+.swp

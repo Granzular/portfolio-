@@ -41,7 +41,7 @@ function doAjax(e){
 console.log("hello");
 
 function imageSlide(e){
-   slides= ["images/tech_background01.jpg","images/tech_background02.jpg","images/tech_background03.jpg"];
+   slides= ["test_image/tech_background01.jpg","test_image/tech_background02.jpg","test_image/tech_background03.jpg"];
 
     imgEl = document.getElementsByClassName("featuredImage")[0];
     slider(slides,imgEl,0);

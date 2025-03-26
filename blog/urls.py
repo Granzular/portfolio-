@@ -16,4 +16,6 @@ urlpatterns =[
 
     path('blog/',views.blogIndex,name="blog"),
     path('ajaxIndex/',ajax_views.ajaxIndex,name="ajaxIndex"),
+    path('tools/adderTest/',views.adderTest.as_view(),name="adderTest"),
+    path('tools/adderTest/test/',views.QuizView.as_view(),name="quiz"),
     ]

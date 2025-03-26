@@ -1,0 +1,27 @@
+{% extends "blog/generic_base.html" %}
+
+{% block head  %}
+<title>addetTestHome</title>
+{% endblock %}
+
+{% block content %}
+<h2>AdderTest</h2>
+<p> AdderTest is an online CBT platform. 
+Login below to continue , or you try anonymous !</p>
+<br>
+<form method="post" action=""> 
+	{% csrf_token %}
+	<fieldset>
+		{% if quizsuccess %}
+		<strong style="color:blue" >{{quizsuccess}}</strong>
+		{% endif %}
+		{% if attempted %}
+		<strong style = "color:red;">Sorry You cannot login again! </strong>
+		{% endif %}
+		
+	<input required name="username" type = "text" placeholder="Matric No." ><br>
+	<input required name="password" type = "text" placeholder="Surname" ><br>
+	<input type = "submit" value="Start Test" >
+	</fieldset> 
+</form>
+{% endblock %}
