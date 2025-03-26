@@ -7,7 +7,7 @@ function setBox(){
     `);
 }
 
-function __Alert(text){
+function __Alert(text="",next=false){
     document.write(`<style>
   .alert-box{
     background-color:white;                                                                 width:80%;                                                                              height:150px;                                                                           padding-left:20px;
@@ -33,8 +33,11 @@ function __Alert(text){
     box.style.display = "block";
 
     box.querySelector("p").innerHTML = text;
-    box.querySelector("button").addEventListener("click",()=>{box.style.display="none"},false)                                                }
-function Alert(text){
+    box.querySelector("button").addEventListener("click",()=>{box.style.display="none";
+	    if (next != false){next();}
+    },false)                                                }
+function Alert(text="",next=false){
 	setBox();
-	__Alert(text)
+	__Alert(text=text,next=next)
+
 }
