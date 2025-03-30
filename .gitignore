@@ -5,7 +5,7 @@
 .env 
 myvenv/ 
 venv/ 
-.venv/
+.venv
 # Database
 db.sqlite3 
 # Static folder at project root
@@ -28,8 +28,7 @@ $RECYCLE.BIN/
 .history/ 
 *.code-workspace
 # bash
-.sh
-wiz.sh
+
 #log
 log
 .log

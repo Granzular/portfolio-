@@ -26,9 +26,10 @@ SECRET_KEY = 'django-insecure-*%&b01e(aibj9+qm0aez4z$e^s-)0xi52ms)7+)r8h6+(g3(s_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','localhost','127.0.0.1','.pythonanywhere.com','.vercel.app']
+ALLOWED_HOSTS = ['0.0.0.0','localhost','10.67.176.210','127.0.0.1','.pythonanywhere.com']
 CSRF_TRUSTED_ORIGINS=[
         'http://localhost:8081',
+        'http://10.67.176.210:8081',
 
         ]
 
@@ -85,8 +86,12 @@ DATABASES = {
         'USER':  os.getenv('PGUSER'),
         'PASSWORD': os.getenv('PGPASSWORD'),
         'HOST': os.getenv('PGHOST'),
-        'PORT': os.getenv('PGPORT')
-    }
+        'PORT': os.getenv('PGPORT'),
+                'TEST':{
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME':'testdatabase.db',
+        }
+                }
 }
 
 

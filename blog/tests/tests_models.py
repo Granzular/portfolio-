@@ -1,7 +1,7 @@
 import datetime
 
 from django.test import TestCase
-from .models import Post
+from ..models import Post
 from django.contrib.auth.models import User
 from django.utils import timezone
 
@@ -28,3 +28,5 @@ class PostModelTests(TestCase):
             pub_date = timezone.now()+datetime.timedelta(days=1)
             unpublished_post = Post(title="Test",text="Testing",published_date=pub_date,author=u)
             self.assertIs(unpublished_post.published(),False)
+
+            

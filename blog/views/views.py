@@ -136,12 +136,12 @@ class QuizView(View):
             if questions.get(id=int(i)).answer.id == int(user_answer_dict[i]):
                 score += 1
 
-        user_score = UserScore()
+        '''user_score = UserScore()
         quiz.users_who_attempted.add(user) 
         user_score.user = user
         user_score.score = score
         quiz.save()
-        user_score.save()
+        user_score.save()'''
         logout(request)
         data = {"message":"success","username":user.username,"score":score}
         context = {"quizsuccess":"Thank you for attempting the test! "}
