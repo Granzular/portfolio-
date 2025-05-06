@@ -6,5 +6,11 @@
 
 {% block content %}
 <h2>Contact</h2>
-{{contact.info|safe|urlize}}
+{% if contact %}
+
+{{contact}}
+
+{% else %}
+No Contact
+{% endif %}
 {% endblock %}

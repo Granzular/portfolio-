@@ -5,5 +5,10 @@
 
 {% block content %}
 <h2> About</h2>
-<p>{{About.text|safe|urlize}}</p>
+{% if about %}
+
+<p>{{about}}</p>
+{% else %}
+No about
+{% endif %}
 {% endblock %}

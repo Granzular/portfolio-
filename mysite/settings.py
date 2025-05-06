@@ -79,19 +79,25 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {    
+        'default':{
+            'ENGINE':'django.db.backends.sqlite3',
+            'NAME':'sqlite3.db'
+            },
+    'main_default': {    
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('PGDATABASE'),
         'USER':  os.getenv('PGUSER'),
         'PASSWORD': os.getenv('PGPASSWORD'),
         'HOST': os.getenv('PGHOST'),
         'PORT': os.getenv('PGPORT'),
+
                 'TEST':{
         'ENGINE':'django.db.backends.sqlite3',
         'NAME':'testdatabase.db',
         }
                 }
 }
+
 
 
 # Password validation
