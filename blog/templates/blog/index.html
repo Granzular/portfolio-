@@ -8,12 +8,16 @@
 {% endblock %}
 
   {% block content %}
-  <h2 class"h2-header"> Explore</h2> 
-  <div class="frame">
-	  <a href="" id="url" class="post-index">
-	<img src="" class="featuredImage"></img></a></div>
 
+  <h2>fullstack Web Developer</h2>
+  <p> Crafting innovative solutions with precision and care </p>
+  <p> Hi! I'm Codex, a seasoned software developer and fullstack developer with a passion for creating quality software.</p>
+
+  <h2 class"h2-header"> Explore My Portfolio </h2> 
+
+  <a class="post-index" href="{% url 'blog:portfolio' %}">Here</a>
 		  <br>
+  <h2> 
    <h2 class="h2-header"> Recent Articles</h2>
 {% if posts %}
 {% for post in posts %}

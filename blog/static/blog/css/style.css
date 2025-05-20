@@ -1,6 +1,7 @@
 /* General body rule*/
 body {
  margin:20px;
+
  padding:0px;
  font-family:'Open Sans',sans-serif;
 }
@@ -51,10 +52,10 @@ header{
 
 /*main body, content */
 main {
- padding-top:20%;
+ padding-top:10%;
 
 }
-.post-index{
+.post-index {
  text-decoration:none;
  color:#444;
  font-family:'Open Sans',sans-serif;

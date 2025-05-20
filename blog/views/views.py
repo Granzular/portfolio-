@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,get_list_or_404,redirect
-from ..models import Post,About,Contact
+from ..models import Post,About,Contact,Project
 from django.utils import timezone
 from django.views import View
 from django.utils.decorators import method_decorator
@@ -44,6 +44,19 @@ def detail(request,pk):
         "post":post
 }
     return render(request,"blog/detail.html",context)
+
+class PortfolioListView(ListView):
+    model = Project
+    template_name = 'blog/portfolio.html'
+    context_object_name = 'projects'
+
+class PortfolioDetail(DetailView):
+    model = Project
+    template_name = 'blog/portfolioDetail.html'
+    context_object_name = 'project'
+    
+
+
 
 
 

@@ -1,0 +1,27 @@
+{% extends "blog/generic_base.html" %}
+
+{% block head %}
+<title>Portfolio</title>
+{% endblock head %}
+
+{% block content %}
+{% if projects %}
+{% for project in projects %}
+
+<div class="card " >
+        <img src="{{project.image.url}}" class="card-img-top pl-2 w-100 h-100" >                                              <div class="card-body">                                       <h5 class="card-title">{{project.title}}</h5>
+		<h6>Description</h6>
+		<p class="card-text">{{project.description|truncatewords:20}}</p>
+		<h6>Languages and Framework</h6>
+	  <p class="card-text">{{project.technologies_used|truncatewords:3}}</p>
+    <a href="{{project.get_absolute_url}}" class="btn btn-primary mt-3">Details</a>
+  </div>
+</div>
+
+{% endfor %}
+{% else %}
+<div class="alert alert-warning" role="alert">
+No projects Available.
+</div>
+{% endif %}
+{% endblock content %}
