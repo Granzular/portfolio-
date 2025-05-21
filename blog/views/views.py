@@ -2,11 +2,8 @@ from django.shortcuts import render,get_object_or_404,get_list_or_404,redirect
 from ..models import Post,About,Contact,Project
 from django.utils import timezone
 from django.views import View
-from django.utils.decorators import method_decorator
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, logout
 from django.views.generic import DetailView , ListView
-from  ..forms import NameForm
+from  ..forms import MessageForm
 from django.urls import reverse,reverse_lazy
 from django.http import JsonResponse
 import json
@@ -33,8 +30,10 @@ def about(request):
 def contact(request):
     contact = Contact.objects.all()
     contact = None if len(contact)==0 else contact[0]
+    msgform = MessageForm()
     context ={
-            "contact":contact
+            "contact":contact,
+            "MessageForm":msgform,
             }
     return render(request,"blog/contact.html",context)
 

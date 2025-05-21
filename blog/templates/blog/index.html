@@ -8,12 +8,20 @@
 {% endblock %}
 
   {% block content %}
+<div class="card mb-5 " style="" >
 
-  <h2>fullstack Web Developer</h2>
-  <p> Crafting innovative solutions with precision and care </p>
-  <p> Hi! I'm Codex, a seasoned software developer and fullstack developer with a passion for creating quality software.</p>
+<div class="card-body">                                       <h5 class="card-title">Fullstack Django Developer</h5>                    <p> Crafting innovative solutions with precision and care </p>
+	<div style="display:flex;"><img src="/media/images/headshot.jpg" class="card-img-top  mx-auto mt-5" style="object-fit:scale-down;width:40%;height:auto;left:0;" >
 
-  <h2 class"h2-header"> Explore My Portfolio </h2> 
+		<p class="card-text  mt-5 m-3 ">Hi! I'm<b> Codex</b>, a seasoned software developer and fullstack developer with a passion for creating quality software. I'm a django expert who builds scalable web applications using django, and RESTful APIs, tailored to meet required needs. <em>Turning idea into code, and code into reality</em>
+		<br>
+		<a href="{% url 'blog:about' %}">learn more</a><p>
+	</div>                                   
+  </div>
+</div>
+
+
+ <h2 class"h2-header"> Explore My Portfolio </h2> 
 
   <a class="post-index" href="{% url 'blog:portfolio' %}">Here</a>
 		  <br>

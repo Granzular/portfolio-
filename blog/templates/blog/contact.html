@@ -1,5 +1,5 @@
 {% extends "blog/generic_base.html" %}
-
+{% load crispy_forms_tags %}
 {% block head %}
 <title>Contact</title>
 {% endblock %}
@@ -8,7 +8,23 @@
 <h2>Contact</h2>
 {% if contact %}
 
-{{contact}}
+<strong>Phone and Mail</strong>
+{% for info in contact.get_info_list %}
+<p>{{info|urlize}}</p>
+{% endfor %}
+<br>
+<strong>Socials and Repo</strong>
+{% for social in contact.get_socials_list %}               <p>{{social|urlize}}</p>
+{% endfor %}
+<br>
+<em>{{contact.additional_info}}</em>
+<br>
+<form class="form mt-3 mb-5">
+	{% csrf_token %}
+	<b>Send a Message</b>
+	{{ MessageForm|crispy }}
+	<button type="submit" class="btn btn-primary m-3">Submit</button>
+</form>
 
 {% else %}
 No Contact

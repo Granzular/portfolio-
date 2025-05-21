@@ -1,6 +1,7 @@
 # Python 
 *.pyc 
-*~ __pycache__ 
+*~ __pycache__
+wiz.py
 # Env 
 .env 
 myvenv/ 
@@ -35,3 +36,4 @@ log
 logfile
 #vim
 .swp
+*.tmp

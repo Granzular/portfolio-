@@ -5,16 +5,16 @@
 {% if project %}
 <div class="card " > 
 	<img src="{{project.image.url}}" class="card-img-top pl-2 w-100 h-100" >
-	<div class="card-body">                                       <h5 class="card-title">{{project.title}}</h5>                                                     <h6>Description</h6>                                  <p class="card-text">{{project.description}}</p>
-		<h6>Languages and Framework</h6>
+	<div class="card-body">                                       <h5 class="card-title">{{project.title}}</h5>                                                     <strong>Description</strong>                                  <p class="card-text">{{project.description}}</p>
+		<strong>Languages and Framework</strong>
           <ul class="list-group">
-		  {% for line in project.get_tech_list %}
+		  {% for line in project.get_technologies_used_list %}
 		  <li class="list-group-item" >{{line}} </li>
 		  {% endfor %}
 	  </ul>
-	  <h6>Links</h6>
+	  <strong>Links</strong>
 
-	  <ul class="list-group">                                       {% for line in project.get_link_list %}                                                                     <li class="list-group-item" >{{line|urlize}}</li>                                                         </ul>
+	  <ul class="list-group">                                       {% for line in project.get_links_list %}                                                                     <li class="list-group-item" >{{line|urlize}}</li>                                                         </ul>
 	  
 
   </div>

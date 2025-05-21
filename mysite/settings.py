@@ -25,8 +25,23 @@ SECRET_KEY = 'django-insecure-*%&b01e(aibj9+qm0aez4z$e^s-)0xi52ms)7+)r8h6+(g3(s_
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#Development Code below not needed for prod
+import socket
+s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+ip = '127.0.0.1'
+port = 8000
+try:
+    s.connect(('8.8.8.8',80))
+    devip = s.getsockname()[0]
+except:
+    print('couldnt connect, defaulting to 127.0.0.1')
+    pass
+_host = f'{ip}:{port}'
+# end of dev code
+#modify the below variables for production
+ALLOWED_HOSTS = [devip,'127.0.0.1','localhost']
 
-ALLOWED_HOSTS = ['0.0.0.0','localhost','127.0.0.1']
+
 CSRF_TRUSTED_ORIGINS=[
         'http://localhost:8080',
 

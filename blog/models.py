@@ -40,6 +40,17 @@ class Contact(models.Model):
     socials = models.TextField()
     additional_info = models.TextField()
 
+
+    def get_additional_info_list(self):
+        return self.additional_info.split(',')
+
+    def get_socials_list(self):
+        return self.socials.split(',')
+
+    def get_info_list(self):
+        return self.info.split(',')
+
+
 class Project(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
@@ -53,12 +64,10 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse('blog:portfolioDetail',kwargs = {'pk':self.pk})
 
-    def get_tech_list(self):
-        print(self.technologies_used.split(','))
+    def get_technologies_used_list(self):
         return self.technologies_used.split(',')
 
-    def get_link_list(self):
-        print(self.links.split(','))
+    def get_links_list(self):
         return self.links.split(',')
 
-
+    
