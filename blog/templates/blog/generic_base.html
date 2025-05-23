@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{% static 'blog/css/style.css'%}"/>
 <link rel="stylesheet" href="{% static 'blog/css/topmenu.css' %}" />
 
-<link rel="icon" type="image/png" href="{% static 'blog/images/favicon.png' %}"/>
+<link rel="icon" type="image/png" href="/media/images/favicon.png"/>
 
 <script>
 	STATIC_URL = "{% static 'blog/'  %}"
@@ -41,6 +41,7 @@ header{
 </head> <body>
   <header>
 	  <nav>
+		  <img src="/media/images/favicon.png" id="brand-logo" alt='brand logo'>
 
 		  <img   src="{% static 'blog/images/menuicon01.png' %} " id="top-menu-icon" alt="menu">
   <menu id="top-menu">
