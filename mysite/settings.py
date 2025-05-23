@@ -28,7 +28,7 @@ DEBUG = True
 #Development Code below not needed for prod
 import socket
 s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-ip = '127.0.0.1'
+devip = '127.0.0.1'
 port = 8000
 try:
     s.connect(('8.8.8.8',80))
@@ -36,7 +36,7 @@ try:
 except:
     print('couldnt connect, defaulting to 127.0.0.1')
     pass
-_host = f'{ip}:{port}'
+_host = f'{devip}:{port}'
 # end of dev code
 #modify the below variables for production
 ALLOWED_HOSTS = [devip,'127.0.0.1','localhost']

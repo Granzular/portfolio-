@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,get_list_or_404,redirect
-from ..models import Post,About,Contact,Project
+from ..models import Post,About,Contact,Project,ClientMessage
 from django.utils import timezone
 from django.views import View
 from django.views.generic import DetailView , ListView
@@ -28,6 +28,15 @@ def about(request):
 
 
 def contact(request):
+
+    if request.method == "POST":
+
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        ClientMessage.objects.create(email = email, message = message)
+        
+
+        return JsonResponse({'msg':'success'})
     contact = Contact.objects.all()
     contact = None if len(contact)==0 else contact[0]
     msgform = MessageForm()

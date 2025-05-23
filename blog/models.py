@@ -3,6 +3,12 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
 
+STATUS_CHOICES = (
+        ('unread','unread'),
+        ('in_progress','in_progress'),
+        ('completed','completed'),
+        )
+
 class Post(models.Model):
     
     author = models.ForeignKey(User,on_delete = models.CASCADE)
@@ -69,5 +75,20 @@ class Project(models.Model):
 
     def get_links_list(self):
         return self.links.split(',')
+
+class ClientMessage(models.Model):
+    email = models.EmailField()
+    message = models.TextField()
+    status = models.CharField(choices=STATUS_CHOICES,default="unread")
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.status} {self.timestamp.strftime("%d %h %Y--%H:%M:%S")}'
+
+    class Meta:
+        ordering = ("-timestamp",)
+
+
+
 
     

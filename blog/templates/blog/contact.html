@@ -1,7 +1,12 @@
 {% extends "blog/generic_base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block head %}
 <title>Contact</title>
+<script type="text/javascript">
+	const MESSAGE_URL = {% url 'blog:contact' %}
+</script>
+<script type='text/javascript' src="{% static 'blog/js/message.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -19,9 +24,11 @@
 <br>
 <em>{{contact.additional_info}}</em>
 <br>
-<form class="form mt-3 mb-5">
+<form class="form mt-3 mb-5" id='message-form' method='POST'>
+	<b>Send A Message</b>
+	<div id="alert-box">
+	</div>
 	{% csrf_token %}
-	<b>Send a Message</b>
 	{{ MessageForm|crispy }}
 	<button type="submit" class="btn btn-primary m-3">Submit</button>
 </form>
