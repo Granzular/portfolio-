@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*%&b01e(aibj9+qm0aez4z$e^s-)0xi52ms)7+)r8h6+(g3(s_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #Development Code below not needed for prod
 import socket
 s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
@@ -39,11 +39,13 @@ except:
 _host = f'{devip}:{port}'
 # end of dev code
 #modify the below variables for production
-ALLOWED_HOSTS = [devip,'127.0.0.1','localhost']
+web_host = 'granzular.pythonanywhere.com'
+ALLOWED_HOSTS = [devip,'127.0.0.1','localhost',web_host]
 
 
 CSRF_TRUSTED_ORIGINS=[
         'http://localhost:8080',
+        web_host,
 
         ]
 
