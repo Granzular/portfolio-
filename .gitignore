@@ -12,9 +12,6 @@ venv/
 # Static folder at project root
 /static/
 test_image/
-#media
-/media
-media/
 
 # macOS 
 ._*
