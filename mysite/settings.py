@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
         'default':{
             'ENGINE':'django.db.backends.sqlite3',
-            'NAME':'sqlite3.db'
+            'NAME':'/home/granzular/granzular.pythonanywhere.com/portfolio-/sqlite3.db'
             },
     'main_default': {    
         'ENGINE': 'django.db.backends.postgresql',
