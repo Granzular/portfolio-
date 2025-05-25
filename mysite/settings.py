@@ -45,7 +45,8 @@ ALLOWED_HOSTS = [devip,'127.0.0.1','localhost',web_host]
 
 CSRF_TRUSTED_ORIGINS=[
         'http://localhost:8080',
-        web_host,
+        'http://' + web_host,
+        'https://' + web_host,
 
         ]
 
