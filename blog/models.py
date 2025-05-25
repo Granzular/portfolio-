@@ -79,7 +79,7 @@ class Project(models.Model):
 class ClientMessage(models.Model):
     email = models.EmailField()
     message = models.TextField()
-    status = models.CharField(choices=STATUS_CHOICES,default="unread")
+    status = models.CharField(choices=STATUS_CHOICES,default="unread",max_length=12)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
