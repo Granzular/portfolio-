@@ -19,7 +19,7 @@
 {% endfor %}
 <br>
 <strong>Socials and Repo</strong>
-{% for social in contact.get_socials_list %}               <p>{{social|urlize}}</p>
+{% for social in contact.get_socials_list %}               <p>{{social|safe}}</p>
 {% endfor %}
 <br>
 <em>{{contact.additional_info}}</em>
@@ -30,7 +30,7 @@
 	</div>
 	{% csrf_token %}
 	{{ MessageForm|crispy }}
-	<button type="submit" class="btn btn-primary m-3">Submit</button>
+	<button type="submit" class="btn btn-danger mt-3 w-100">Submit</button>
 </form>
 
 {% else %}

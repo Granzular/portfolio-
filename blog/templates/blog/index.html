@@ -8,36 +8,36 @@
 {% endblock %}
 
   {% block content %}
-<div class="card mb-5 " style="" >
+<div class="card mb-1 index-card" >
 
 <div class="card-body">                                       <h5 class="card-title">Fullstack Django Developer</h5>                    <p> Crafting innovative solutions with precision and care </p>
-	<div style="display:flex;"><img src="/media/images/headshot.jpg" class="card-img-top  mx-auto mt-5" style="object-fit:scale-down;width:40%;height:auto;left:0;" >
+	
 
-		<p class="card-text  mt-5 m-3 ">Hi! I'm<b> Codex</b>, a seasoned software developer and fullstack developer with a passion for creating quality software. I'm a django expert who builds scalable web applications using django, and RESTful APIs, tailored to meet required needs. <em>Turning idea into code, and code into reality</em>
+		<p class="card-text  mt-5 m-3 ">Hi! I'm<b> Michael Ayeni</b>, a seasoned software developer and fullstack developer with a passion for creating quality software.<br><em>Turning idea into code, and code into reality</em>
 		<br>
-		<a href="{% url 'blog:about' %}">learn more</a><p>
-	</div>                                   
+	                                 
   </div>
 </div>
 
-
- <h2 class"h2-header"> Explore My Portfolio </h2> 
-
-  <a class="post-index" href="{% url 'blog:portfolio' %}">Here</a>
+		<a href="{% url 'blog:about' %}" class="btn btn-danger mt-5 w-100 " style="right:10px;">About Us</a>
+	<br>
+  <a class="btn btn-danger mt-3 w-100" href="{% url 'blog:portfolio' %}">Portfolio</a>
 		  <br>
   <h2> 
-   <h2 class="h2-header"> Recent Articles</h2>
+   <h2 class="h2-header mt-5">Blog Post</h2>
 {% if posts %}
 {% for post in posts %}
-<a href="{% url 'blog:detail' post.id %}" class="post-index">
-	<article class="post">
-		<h2 class="title" >{{post.title}}</h2>
-		<p>{{post.preview|safe}}</p>
+<a href="{% url 'blog:detail' post.id %}" >
+	<article class="card index-card">
+		<h2 class="title card-title" >{{post.title}}</h2>
+			<hr>
+		<div class="card-body">{{post.text|truncatewords:20}}</div>
 	</article>
 </a>
 <hr>
 {% endfor %}
 {% else %}
+  		
 <article> No posts available </article>
 {% endif %} 	
 	{% endblock %}

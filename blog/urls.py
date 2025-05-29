@@ -13,5 +13,6 @@ urlpatterns =[
     path('portfolio/<pk>/detail/',views.PortfolioDetail.as_view(),name='portfolioDetail'),
 
         path('ajaxIndex/',ajax_views.ajaxIndex,name="ajaxIndex"),
+        path('resume/pdf/',views.resumepdf,name='resumepdf'),
     
     ]

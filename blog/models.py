@@ -89,6 +89,10 @@ class ClientMessage(models.Model):
         ordering = ("-timestamp",)
 
 
+class Resume(models.Model):
+    file = models.FileField(upload_to='documents')
+
+
 
 
     

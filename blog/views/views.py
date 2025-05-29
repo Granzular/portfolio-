@@ -1,11 +1,11 @@
 from django.shortcuts import render,get_object_or_404,get_list_or_404,redirect
-from ..models import Post,About,Contact,Project,ClientMessage
+from ..models import Post,About,Contact,Project,ClientMessage,Resume
 from django.utils import timezone
 from django.views import View
 from django.views.generic import DetailView , ListView
 from  ..forms import MessageForm
 from django.urls import reverse,reverse_lazy
-from django.http import JsonResponse
+from django.http import JsonResponse,FileResponse
 import json
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -62,6 +62,11 @@ class PortfolioDetail(DetailView):
     model = Project
     template_name = 'blog/portfolioDetail.html'
     context_object_name = 'project'
+
+def resumepdf(request):
+    file = get_object_or_404(Resume,pk=1).file
+
+    return FileResponse(file,filename='michael_ayeni_resume.pdf')
     
 
 

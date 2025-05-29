@@ -15,44 +15,28 @@
 	STATIC_URL = "{% static 'blog/'  %}"
 	AJAX_URL = "{% url 'blog:ajaxIndex' %}"
 </script>
-
-<script defer src="{% static 'blog/js/topmenu.js' %}"></script>
-<script type="text/javascript" defer src="{% static 'blog/js/slideshow.js' %}"></script>
-<style>
-
-header{
- background-image:url("{% static 'blog/images/website_header_background.jpg' %}");
- background-repeat:no-repeat;
- width:100%;
-}
-#website-logo{
- width:60px;
- height:60px;
- position:fixed; 
- margin-top:40px;
- margin-left:30px;
- z-index:1000;
- opacity:100%;
-}
-
-</style> 
+<!--
+<script defer src="{% static 'blog/js/topmenu.js' %}"></script>-->
+<script type="text/javascript"  src="{% static 'blog/js/slideshow.js' %}"></script>
 
 {% block head %} {% endblock %}
 </head> <body>
   <header>
-	  <nav>
+	  
 		  <img src="/media/images/favicon.png" id="brand-logo" alt='brand logo'>
+	<nav >
 
-		  <img   src="{% static 'blog/images/menuicon01.png' %} " id="top-menu-icon" alt="menu">
-  <menu id="top-menu">
-    <a href="/"><li>Home</li>
-	    <a href="{% url 'blog:about' %}"><li>About</li>
-	<a href="{% url 'blog:portfolio' %}"><li>Portfolio</li></a>
-	<a href="{% url 'blog:contact' %}"><li>Contact</li></a>
+		  <!-- <img   src="{% static 'blog/images/menuicon01.png' %} " id="top-menu-icon" alt="menu">-->
+	<ul class="navlist" >
+		<li ><a class="list-item-link"  href="/">Home</a></li>
+		<li><a class="list-item-link" href="{% url 'blog:about' %}"> About</a></li>
+	  <li ><a class="list-item-link" href="{% url 'blog:portfolio' %}">Portfolio</a></li>
+	  <li><a class="list-item-link" href="{% url 'blog:contact' %}">Contact</a></li>
+	</ul>
 
-  </menu>
   </nav>
-  <a href="/" class="website-name-link"> <h1 class="website-name">GRANZULAR CODEX</h1></a>
+   <a href="{% url 'blog:resumepdf' %}" class="btn btn-warning" style="padding:0;margin-left:60%;margin-right:0 ;z-index:2000;">Download Resume</a>
+  <!-- <a href="/" class="website-name-link"> <h1 class="website-name">GRANZULAR CODEX</h1></a>-->
   </header>
  <section   class="feature-box">
 	 <div>
@@ -63,14 +47,16 @@ header{
  <main class="content">
 {% block content %}
 {% endblock %}
+  
  </main>
  <br/>
  <br/>
  <br/>
  
   <footer>
- <address>N18 umaru doma street , Gonin gora, Kaduna , Nigeria.</address>
-<p> copyright©2024 </p>
+
+granzularcodex 
+   <p> copyright©2024 </p>
 </footer>
 {% block end %}
 {% endblock %}
