@@ -4,14 +4,19 @@
 	--electric-blue:#03A9F5; 
 	
 }
+h2{
+	color:var(--electric-blue);
+	font-size: 25px;
+}
 a{
 	text-decoration: none;
 	color:#03A9F5
 }
 body {
  margin:20px;
-	background-image: url('/media/images/background02.png');
+	background-image: url('/media/images/background.jpg');
 	background-repeat: no-repeat;
+	background-size: cover;
  padding:0px;
  font-family:'Open Sans',sans-serif;
 	color:white;
@@ -95,22 +100,11 @@ main {
 .index-card .card-body{
 	font-size: 20px;
 }
-.frame {
- height:200px;
+.boldtext{
+	color:var(--electric-blue);
 }
 
- a.see-more {
- font-size:30px;
- text-decoration:none;
-}
-time{
- color:black;
- font-family:courier;
-}
-.h2-header{
-   color:lightblue;
-   font-size:30px;
-}
+
 
 
 /* Footer */
@@ -120,4 +114,13 @@ footer{
  text-align: center;
  width:100%;
 
+}
+footer img{
+	    object-fit:contain;
+    border-radius:50%;
+    border-style:solid;
+    width:40px;
+    height:auto;
+    border-color:white;
+	    background-color:var(--electric-blue);
 }
