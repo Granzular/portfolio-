@@ -8,7 +8,8 @@ myvenv/
 venv/ 
 .venv
 # Database
-#db.sqlite3 
+db.sqlite3
+sqlite3.db
 # Static folder at project root
 /static/
 test_image/
