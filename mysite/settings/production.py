@@ -53,7 +53,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / '../static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# EMAILING SETTINGS
+
+EMAIL_HOST_USER = "granzularcodex@gmail.com"
+EMAIL_HOST_PASSWORD = "acfq cpgg cosl egsh"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_TIMEOUT = 60 * 2

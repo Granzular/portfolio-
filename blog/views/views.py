@@ -9,8 +9,9 @@ from django.http import JsonResponse,FileResponse
 import json
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-
+from ..utils import auto_mail_reply
 # Create your views here.
+
 
 def index(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by("-published_date")[:3]
@@ -34,7 +35,7 @@ def contact(request):
         email = request.POST.get('email')
         message = request.POST.get('message')
         ClientMessage.objects.create(email = email, message = message)
-        
+        auto_mail_reply(email)
 
         return JsonResponse({'msg':'success'})
     contact = Contact.objects.all()
@@ -49,8 +50,8 @@ def contact(request):
 def detail(request,pk):
     post = get_object_or_404(Post,pk=pk,published_date__lte=timezone.now())
     context = {
-        "post":post
-}
+            "post":post
+            }
     return render(request,"blog/detail.html",context)
 
 class PortfolioListView(ListView):

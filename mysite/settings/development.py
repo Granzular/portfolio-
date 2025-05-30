@@ -73,5 +73,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # EMAILING SETTINGS
 
-EMAIL_HOST_USER = ""
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_USER = "ayenimichael92@gmail.com"
+EMAIL_HOST_PASSWORD = "ijky etua wexf tnmp"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_TIMEOUT = 60 * 3
