@@ -1,6 +1,17 @@
 
 from .base import *
+import os,secrets
+
+# SECRET_KEY
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+if SECRET_KEY == None:
+    os.environ["SECRET_KEY"] = secrets.token_urlsafe(32)
+    SECRET_KEY = os.getenv('SECRET_KEY')
+
+
 DEBUG = True
+
 #Development Code below not needed for prod
 import socket
 s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
@@ -60,7 +71,7 @@ STATIC_ROOT = '/data/data/com.termux/files/usr/var/www/mysite/static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+# EMAILING SETTINGS
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""

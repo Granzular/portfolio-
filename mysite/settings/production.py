@@ -1,4 +1,11 @@
 from .base import *
+import os, secrets
+# SECRET KEY GENERATION
+SECRET_KEY = os.getenv('SECRET_KEY')
+if SECRET_KEY == None:
+    os.environ["SECRET_KEY"] = secrets.token_urlsafe(32)
+    SECRET_KEY = os.getenv('SECRET_KEY')
+ 
 
 DEBUG = False
 

@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*%&b01e(aibj9+qm0aez4z$e^s-)0xi52ms)7+)r8h6+(g3(s_'
+#SECRET_KEY = 'django-insecure-*%&b01e(aibj9+qm0aez4z$e^s-)0xi52ms)7+)r8h6+(g3(s_'
 
 
 
@@ -50,6 +50,7 @@ CRISPY_ALLOWED_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
+        'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -85,6 +87,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #define in production or development settings file
 
 DATABASES = {}
+
+# Cache
+# Custom code. Database Cache
+
+CACHES = {
+        "default":{
+            "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+            "LOCATION": "my_cache_table",
+            }
+        }
+CACHE_MIDDLEWARE_ALIAS = "default"
+CACHE_MIDDLEWARE_SECONDS = 60 * 15
+CACHE_MIDDLEWARE_KEY_PREFIX = "portfolio-"
 
 
 # Password validation
