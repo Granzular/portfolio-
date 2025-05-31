@@ -15,7 +15,7 @@
 
 <strong>Phone and Mail</strong>
 {% for info in contact.get_info_list %}
-<p>{{info|urlize}}</p>
+<p>{{info|safe|urlize}}</p>
 {% endfor %}
 <br>
 <strong>Socials and Repo</strong>
