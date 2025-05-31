@@ -57,7 +57,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # EMAILING SETTINGS
 
 EMAIL_HOST_USER = "granzularcodex@gmail.com"
-EMAIL_HOST_PASSWORD = os.environ["EMAIL_PASSWORD"]
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 print(EMAIL_HOST_PASSWORD)
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 465
