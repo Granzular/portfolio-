@@ -15,8 +15,19 @@ from ..utils import auto_mail_reply
 
 def index(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by("-published_date")[:3]
+    skillset = ['Python', 'Django', 'Bootstrap', 'JavaScript', 'PostgreSQL', 'REST APIs']
+    about = About.objects.all()
+    about = None if len(about)==0 else about[0]
+    contact = Contact.objects.all()
+    contact = None if len(contact)==0 else contact[0]
+    msgform = MessageForm()
+
     context ={
-        "posts":posts
+        "posts":posts,
+        "skillset":skillset,
+        "MessageForm":msgform,
+        "contact":contact,
+        "about":about,
         }
     return render(request,"blog/index.html",context)
 

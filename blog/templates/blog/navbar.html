@@ -1,12 +1,19 @@
-
-<img src="/media/images/favicon.
-png" id="brand-logo" alt='brand logo'>
-        <nav >
-
-                  <!-- <img   src="{% static 'blog
-/images/menuicon01.png' %} " id="top-menu-icon" alt="menu">-->
-        <ul class="navlist" >                                     <li ><a class="list-item-link"  href="/">Home</a></li>                                              <li><a class="list-item-link" href="{% url 'blog:about' %}"> About</a></li>                   <li ><a class="list-item-link" href="{% url 'blog:portfolio' %}">Portfolio</a></li>
-          <li><a class="list-item-link" href="{% url 'blog:contact' %}">Contact</a></li>                    </ul>                                     
-  </nav>
-   <a href="{% url 'blog:resumepdf' %}" class="btn btn-warning" style="padding:0;margin-left:60%;margin-right:0 ;z-index:2000;">Download Resume</a>
-  <!-- <a href="/" class="website-name-link"> <h1 class="website-name">GRANZULAR CODEX</h1></a>-->
+<nav class="navbar navbar-expand-lg bg-body shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">granzularCODEX</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-secondary ms-2" id="toggleTheme">🌓</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

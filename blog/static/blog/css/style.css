@@ -1,16 +1,19 @@
 /* General body rule*/
+
 :root{
 	--back:darkslategrey;
 	--electric-blue:#03A9F5; 
 	
 }
-h2{
-	color:var(--electric-blue);
-	font-size: 25px;
-}
+ 
 a{
 	text-decoration: none;
 	color:#03A9F5
+}
+/*
+h2{
+	color:var(--electric-blue);
+	font-size: 25px;
 }
 body {
  margin:20px;
@@ -21,8 +24,10 @@ body {
  font-family:'Open Sans',sans-serif;
 	color:white;
 }
+*/
 
 /*Header */
+/*
  .navlist  {
  display:flex;
  
@@ -42,10 +47,7 @@ body {
 }
 
 .navlist a.current-page-nav-link {
-	/*border-style:groove;
-	border-radius:5px;
-	border-width:1px;
-	border-color:blue;*/
+	
 	color: #03A9F4;
 	width:100%;
 }
@@ -77,8 +79,9 @@ header{
  text-decoration:none;
  color:black;
 }
-
+*/
 /*main body, content */
+/*
 main {
  padding-top:20%;
 
@@ -105,9 +108,10 @@ main {
 }
 
 
-
+*/
 
 /* Footer */
+/*
 footer{
  color:#999;
  font-size:10px;
@@ -123,4 +127,4 @@ footer img{
     height:auto;
     border-color:white;
 	    background-color:var(--electric-blue);
-}
+}*/

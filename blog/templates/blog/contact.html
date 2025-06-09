@@ -1,16 +1,13 @@
-{% extends "blog/generic_base.html" %}
+<!--this template is a django template partial-->
+
 {% load crispy_forms_tags %}
 {% load static %}
-{% block head %}
-<title>Contact</title>
 <script type="text/javascript">
 	const MESSAGE_URL = {% url 'blog:contact' %}
 </script>
 <script type='text/javascript' src="{% static 'blog/js/message.js' %}"></script>
-{% endblock %}
 
-{% block content %}
-<h2>Contact</h2>
+
 {% if contact %}
 
 <strong>Phone and Mail</strong>
@@ -30,10 +27,9 @@
 	</div>
 	{% csrf_token %}
 	{{ MessageForm|crispy }}
-	<button type="submit" class="btn btn-danger mt-3 w-100">Submit</button>
+	<button type="submit" class="btn btn-outline-primary mt-3 w-100">Submit</button>
 </form>
 
 {% else %}
 No Contact
 {% endif %}
-{% endblock %}
