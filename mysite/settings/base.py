@@ -88,18 +88,6 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {}
 
-# Cache
-# Custom code. Database Cache
-
-CACHES = {
-        "default":{
-            "BACKEND": "django.core.cache.backends.db.DatabaseCache",
-            "LOCATION": "my_cache_table",
-            }
-        }
-CACHE_MIDDLEWARE_ALIAS = "default"
-CACHE_MIDDLEWARE_SECONDS = 60 * 15
-CACHE_MIDDLEWARE_KEY_PREFIX = "portfolio-"
 
 
 # Password validation

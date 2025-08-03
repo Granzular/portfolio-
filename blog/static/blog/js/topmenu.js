@@ -2,7 +2,7 @@
 window.addEventListener("load",registerEvents,false);
   function registerEvents(e){
     document.getElementById("top-menu-icon").addEventListener("click",toggleMenu,false);
-    //document.getElementById("top-menu-home").addEventListener("click",toggleMenu,false);
+   // document.getElementById("top-menu-home").addEventListener("click",toggleMenu,false);
   }
   
   function toggleMenu(e){

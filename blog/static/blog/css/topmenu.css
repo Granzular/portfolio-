@@ -45,7 +45,7 @@
     right:5px;
     width:30px;
     height:30px;
-    z-index:2000;
+    z-index:5000;
     	
 
   }
@@ -63,5 +63,8 @@
 
 
   }
-  
+/*
+@media screen and (max-width:600px;){
 
+
+}*/

@@ -16,21 +16,23 @@
 
 		<p class="card-text  mt-5 m-3 ">Hi! I'm<strong class="boldtext"> Michael Ayeni</strong>, a seasoned software developer and fullstack developer with a passion for creating quality software.<br><em>Turning idea into code, and code into reality</em>
 		<br>
+		<a href="{% url 'blog:resumepdf' %}" class="btn btn-primary mt-5" style="color:white;">Download Resume</a>
+
 	                                 
   </div>
 </div>
 
-		<a href="{% url 'blog:about' %}" class="btn btn-danger mt-5 w-100 " style="right:10px;">About Us</a>
+		<a href="{% url 'blog:about' %}" class="btn btn-danger mt-5 w-100 " style="right:10px;">About</a>
 	<br>
   <a class="btn btn-danger mt-3 w-100" href="{% url 'blog:portfolio' %}">Portfolio</a>
 		  <br>
-  <h2> 
-   <h2 class="h2-header mt-5">Blog Posts</h2>
+ 
+  <h2 class="mt-5">Blog Posts</h2>
 {% if posts %}
 {% for post in posts %}
 <a href="{% url 'blog:detail' post.id %}" >
-	<article class="card index-card">
-		<h2 class="title card-title" >{{post.title}}</h2>
+	<article class="card index-card" style="padding:4px;">
+		<strong class="title card-title boldtext m-4">{{post.title}}</strong>
 			<hr>
 		<div class="card-body">{{post.text|truncatewords:20}}</div>
 	</article>

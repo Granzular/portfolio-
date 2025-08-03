@@ -1,12 +1,10 @@
-
+{% load static %}
 <img src="/media/images/favicon.
 png" id="brand-logo" alt='brand logo'>
         <nav >
 
-                  <!-- <img   src="{% static 'blog
-/images/menuicon01.png' %} " id="top-menu-icon" alt="menu">-->
-        <ul class="navlist" >                                     <li ><a class="list-item-link"  href="/">Home</a></li>                                              <li><a class="list-item-link" href="{% url 'blog:about' %}"> About</a></li>                   <li ><a class="list-item-link" href="{% url 'blog:portfolio' %}">Portfolio</a></li>
+<img   src="{% static 'blog/images/menuicon01.png' %} " id="top-menu-icon" alt="menu">
+        <ul class="navlist" id="top-menu" >                                     <li ><a class="list-item-link"  href="/">Home</a></li>                                              <li><a class="list-item-link" href="{% url 'blog:about' %}"> About</a></li>                   <li ><a class="list-item-link" href="{% url 'blog:portfolio' %}">Portfolio</a></li>
           <li><a class="list-item-link" href="{% url 'blog:contact' %}">Contact</a></li>                    </ul>                                     
   </nav>
-   <a href="{% url 'blog:resumepdf' %}" class="btn btn-warning" style="padding:0;margin-left:60%;margin-right:0 ;z-index:2000;">Download Resume</a>
-  <!-- <a href="/" class="website-name-link"> <h1 class="website-name">GRANZULAR CODEX</h1></a>-->
+   <!-- <a href="/" class="website-name-link"> <h1 class="website-name">GRANZULAR CODEX</h1></a>-->

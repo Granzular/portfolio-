@@ -58,8 +58,17 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 EMAIL_HOST_USER = "granzularcodex@gmail.com"
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
-print(EMAIL_HOST_PASSWORD)
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_TIMEOUT = 60 * 2
+
+# Cache                                           # Custom code. Database Cache
+CACHES = {                                                "default":{
+            "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+            "LOCATION": "my_cache_table",
+            }
+        }
+CACHE_MIDDLEWARE_ALIAS = "default"
+CACHE_MIDDLEWARE_SECONDS = 60 * 15
+CACHE_MIDDLEWARE_KEY_PREFIX = "portfolio-"
