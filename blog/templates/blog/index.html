@@ -32,7 +32,7 @@
 {% for post in posts %}
 <a href="{% url 'blog:detail' post.id %}" >
 	<article class="card">
-		<strong class="title card-title boldtext m-4">{{post.title}}</strong>
+		<strong class="title card-title boldtext">{{post.title}}</strong>
 			<hr>
 		<div class="card-body">{{post.text|truncatewords:20}}</div>
 	</article>

@@ -145,9 +145,11 @@ footer img{
 
 .card{
 	display: flex;
+	flex-direction: column;
 	border-style: solid;
 	border-width: 1px;
 	padding:8px;
 	margin: 5px;
+	height: max-content;
 
 }
