@@ -121,3 +121,33 @@ footer img{
     border-color:white;
 	    background-color:var(--electric-blue);
 }
+
+/* reusable ui component classes*/
+.btn{
+	display: inline-block;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 0.1px;
+	width: 20em;
+	padding: 8px;
+	margin: 10px;
+	text-align: center;
+
+}
+.btn-primary{
+	background-color: #0d6efd;
+	color:white;
+	border-style:none ;
+}
+.btn-outline-primary{
+	border-color: #0d6efd ;
+}
+
+.card{
+	display: flex;
+	border-style: solid;
+	border-width: 1px;
+	padding:8px;
+	margin: 5px;
+
+}
