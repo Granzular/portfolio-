@@ -1,0 +1,82 @@
+/* always remember to add padding-top to the main content Below the navbar*/
+#brand-logo{
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.navbar{
+  display: block;
+  height: 50px;
+  position: fixed;
+  width:100%;
+  left: 0;
+  right: 0;
+  top:0;
+  box-shadow: 0 0 5px 2px #999; 
+  background-color: white;
+}
+
+.navbar-ul {
+  display: none;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px 2px #777;
+  background-color: white;
+  color: white;
+  opacity: 100%;
+  position: fixed;
+  top: 0px;
+  padding-left:5px;
+  padding-right: 5em;
+  height: 100vh;
+}
+
+.nav-icon{
+  margin: 5px;
+}
+#menu-icon{
+  width:40px;
+  height: 40px;
+  float: right;
+  
+}
+#close-icon{
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  border-style: solid;
+  border-width:0.5px;
+  border-radius:5px;
+  border-color:#777;
+  padding: 5px;
+  z-index: 2000;
+}
+
+.navbar-ul li{
+  list-style: none;
+  padding: 5px;
+  padding-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.nav-link{
+  text-decoration: none;
+  color:black;
+}
+
+.active-link {
+  border-style: solid;
+  border-radius: 5px;
+  padding:5px;
+  
+}
+
+@media screen and (max-width:200px;){
+  .nav-icon{
+    display: none;
+  }
+  .navbar-ul{
+    display:flex;
+  }
+}

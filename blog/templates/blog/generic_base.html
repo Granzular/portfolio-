@@ -5,7 +5,7 @@
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'blog/css/style.css'%}"/>
-<link rel="stylesheet" href="{% static 'blog/css/topmenu.css' %}" />
+<link rel="stylesheet" href="{% static 'blog/css/navbar.css' %}" />
 
 <link rel="icon" type="image/png" href="/media/images/favicon.png"/>
 
@@ -14,9 +14,7 @@
 	AJAX_URL = "{% url 'blog:ajaxIndex' %}"
 </script>
 
-<script  type="text/javascript" src="{% static 'blog/js/topmenu.js' %}"></script>
-<script type="text/javascript"  src="{% static 'blog/js/slideshow.js' %}"></script>
-
+<script  type="text/javascript" src="{% static 'blog/js/navbar.js' %}"></script>
 {% block head %} {% endblock %}
 </head> <body>
   <header>

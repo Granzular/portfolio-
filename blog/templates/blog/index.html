@@ -8,13 +8,13 @@
 {% endblock %}
 
   {% block content %}
-<div class="card index-card" >
+<div class="card" >
 
 <div class="card-body">                                       <strong class="boldtext"> Fullstack Django Developer</strong>
 		<p> Crafting innovative solutions with precision and care </p>
 	
 
-		<p class="card-text ">Hi! I'm<strong class="boldtext"> Michael Ayeni</strong>, a seasoned software developer and fullstack developer with a passion for creating quality software.<br><em>Turning idea into code, and code into reality</em>
+		<p class="card-text ">Hi! I'm<strong class="boldtext" style="js"> Michael Ayeni</strong>, a seasoned software developer and fullstack developer with a passion for creating quality software.<br><em>Turning idea into code, and code into reality</em>
 		<br>
 		<a href="{% url 'blog:resumepdf' %}" class="btn btn-outline-primary" >Download Resume</a>
 
@@ -27,14 +27,14 @@
   <a class="btn btn-primary" href="{% url 'blog:portfolio' %}">Portfolio</a>
 		  <br>
  
-  <h2 class="">Blog Posts</h2>
+  <h2>Blog Posts</h2>
 {% if posts %}
 {% for post in posts %}
 <a href="{% url 'blog:detail' post.id %}" >
 	<article class="card">
-		<strong class="title card-title boldtext">{{post.title}}</strong>
+		<strong class="boldtext">{{post.title}}</strong>
 			<hr>
-		<div class="card-body">{{post.text|truncatewords:20}}</div>
+		<div>{{post.text|safe|truncatewords:20}}</div>
 	</article>
 </a>
 <hr>

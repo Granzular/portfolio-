@@ -1,10 +1,14 @@
 {% load static %}
-<img src="/media/images/favicon.
-png" id="brand-logo" alt='brand logo'>
-        <nav >
 
-<img   src="{% static 'blog/images/menuicon01.png' %} " id="top-menu-icon" alt="menu">
-        <ul class="navlist" id="top-menu" >                                     <li ><a class="list-item-link"  href="/">Home</a></li>                                              <li><a class="list-item-link" href="{% url 'blog:about' %}"> About</a></li>                   <li ><a class="list-item-link" href="{% url 'blog:portfolio' %}">Portfolio</a></li>
-          <li><a class="list-item-link" href="{% url 'blog:contact' %}">Contact</a></li>                    </ul>                                     
+        <nav class="navbar">
+<img src="/media/images/favicon.
+png" id="brand-logo" class="nav-icon" alt='brand logo'>
+<img   src="{% static 'blog/images/menuicon01.png' %} " id="menu-icon" class="nav-icon" alt="menu">
+        <ul class="navbar-ul" id="navbar-ul" >
+          <img src="{% static 'blog/images/close.png' %}" class="nav-icon" id="close-icon">
+  <li ><a class="nav-link"  href="/">Home</a></li>
+          <li><a class="nav-link" href="{% url 'blog:about' %}"> About</a></li>
+          <li ><a class="nav-link" href="{% url 'blog:portfolio' %}">Portfolio</a></li>
+          <li><a class="nav-link" href="{% url 'blog:contact' %}">Contact</a></li>                    </ul>                                     
   </nav>
    <!-- <a href="/" class="website-name-link"> <h1 class="website-name">GRANZULAR CODEX</h1></a>-->
