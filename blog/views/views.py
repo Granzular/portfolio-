@@ -43,7 +43,7 @@ def contact(request):
     msgform = MessageForm()
     context ={
             "contact":contact,
-            "MessageForm":msgform,
+            "message_form":msgform,
             }
     return render(request,"blog/contact.html",context)
 

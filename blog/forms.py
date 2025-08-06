@@ -5,6 +5,14 @@ class NameForm(forms.Form):
     result = forms.CharField(widget=forms.Textarea)
 
 class MessageForm(forms.Form):
-    email = forms.EmailField()
-    message = forms.CharField(widget=forms.Textarea)
+    email = forms.EmailField(widget = forms.EmailInput(attrs = {
+        "class" : "form-control text-input",
+        "placeholder" : "Email",
+        }
+                                                       ) )
+    message = forms.CharField(widget = forms.Textarea(attrs = {
+        "class" : "form-control",
+        "placeholder" : "Type a message"
+        }
+        ))
 

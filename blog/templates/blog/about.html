@@ -6,9 +6,11 @@
 {% block content %}
 <h2> About</h2>
 {% if about %}
+<article class="card">
+{{about.text|safe}}
 
-<p>{{about.text|safe}}</p>
-<a class="btn btn-danger mt-3 w-50" href="{% url 'blog:contact' %}">Get In Touch</a>
+<a class="btn btn-primary" href="{% url 'blog:contact' %}">Get In Touch</a>
+  </article>
 {% else %}
 No about
 {% endif %}

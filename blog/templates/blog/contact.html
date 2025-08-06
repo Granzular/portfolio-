@@ -24,13 +24,25 @@
 <br>
 <em>{{contact.additional_info}}</em>
 <br>
-<form class="form mt-3 mb-5" id='message-form' method='POST'>
+<form class="form" id='message-form' method='POST'>
 	<b>Send A Message</b>
 	<div id="alert-box">
 	</div>
 	{% csrf_token %}
-	{{ MessageForm|crispy }}
-	<button type="submit" class="btn btn-danger mt-3 w-100">Submit</button>
+	<div class="fieldset">
+	<label for="{{message_form.email.id_for_label}}"><span class="fg-red">*</span></label><br>
+	{{message_form.email}}
+	{{message_form.email.errors}}
+	</div>
+	
+		<div class="fieldset">
+	<label for="{{message_form.message.id_for_label}}"><span class="fg-red">*</span></label><br>
+	{{message_form.message}}
+	{{message_form.message.errors}}
+	</div>
+	<div class="fieldset">
+	<button type="submit" class="btn btn-primary form-control">Submit</button>
+		<div>
 </form>
 
 {% else %}

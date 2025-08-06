@@ -5,7 +5,6 @@ function set_active_link(){
     /* Only works properly for a multipage website; if the links are on the same page, unwanted behaviours. shall be updated.*/
     const nav_links = document.querySelectorAll(".nav-link");
     for(i of nav_links){
-        console.log(i.href);
         if(i.href === window.location.href){
             
             i.classList.add("active-link");

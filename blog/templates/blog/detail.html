@@ -5,12 +5,13 @@
 {% endblock %}
 
 {% block content %}
-<a href="/" style="text-decoration:none;color:white;font-size:20px;"> < back </a>
-<article>
+<a href="/" style="font-size:20px; min-width:5em;" class="btn">  back </a>
+<article class="card">
   <h2 class="post-title" >{{post.title}}</h2>
   <time>published: {{post.published_date}}
   </time>
-<p>  {{post.text|safe}} </p>
+  
+  {{post.text|safe}}
 </article>
 <br/>
 {% endblock %}
