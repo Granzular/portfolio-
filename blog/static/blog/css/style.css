@@ -16,8 +16,7 @@ body {
  font-family:sans-serif;
 	 word-spacing: 5px;
 	letter-spacing: 1px;
-	background-color: #111;
-	color: white;
+	/* theme files handle colors for bg and fg*/
 }
 
 

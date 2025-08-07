@@ -6,6 +6,8 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'blog/css/style.css'%}"/>
 <link rel="stylesheet" href="{% static 'blog/css/navbar.css' %}" />
+  <link rel="stylesheet" href="{% static 'blog/css/dark-theme.css' %}" />
+
 
 <link rel="icon" type="image/png" href="/media/images/favicon.png"/>
 
@@ -14,7 +16,9 @@
 	AJAX_URL = "{% url 'blog:ajaxIndex' %}"
 </script>
 
-<script  type="text/javascript" src="{% static 'blog/js/navbar.js' %}"></script>
+<script type="text/javascript" src="{% static 'blog/js/navbar.js' %}"></script>
+  <script  type="text/javascript" src="{% static 'blog/js/theme.js' %}"></script>
+  
 {% block head %} {% endblock %}
 </head> <body>
   <header>
