@@ -1,8 +1,21 @@
 body{
-  background-color: #111;
+  background-color: #222222;
   color: white;
 }
 .navbar, .navbar-ul{
-  background-color: black;
+  background-color: #222222;
+}
+.nav-link{
+  color: white;
+}
+.active-link{
+  border-color: goldenrod;
+  color: goldenrod;
+}
+.nav-icon{
+  filter: invert(100%);
+}
+#brand-logo{
+  background-color: white;
 }
 

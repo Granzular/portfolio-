@@ -87,7 +87,8 @@
   border-style: solid;
   border-radius: 5px;
   padding:5px;
-  
+  border-color: goldenrod;
+  color: goldenrod;
 }
 
 @media screen and (min-width:786px){
