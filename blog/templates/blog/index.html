@@ -8,23 +8,32 @@
 {% endblock %}
 
   {% block content %}
-<div class="card" >
+<div class="card" id="section1" >
+		<div class="card-body">
+		
+		<h2>Hi<br>I'm<strong class="boldtext"> Michael Ayeni</strong><br>django developer</h2>
 
-<div class="card-body">
-		<p class="card-text ">
-				I'm<strong class="boldtext" style="font-size:30px;"> Michael Ayeni</strong>, a seasoned software developer and django developer with a passion for creating quality software.<br><br><em>Turning idea into code, and code into reality</em>
-		<br>
-		<a href="{% url 'blog:resumepdf' %}" class="btn btn-outline-primary" >Download Resume</a>
+		<p>
+		with a passion for creating quality software.<br><br><em>Turning idea into code, and code into reality</em></p>
+						<br>
+		
+		<a href="{% url 'blog:resumepdf' %}" class="btn btn-outline-sec">Download Resume</a>
 
-	                                 
-  </div>
+		</div>
+		<div class="card-img">
+				<img src="/media/images/profile_pic.jpg" id="profile-img" alt="my profile picture">
+		</div>                              
 </div>
-
-		<a href="{% url 'blog:about' %}" class="btn btn-primary" >About</a>
-	<br>
-  <a class="btn btn-primary" href="{% url 'blog:portfolio' %}">Portfolio</a>
+<br>
+<div id="section2">
+		<a href="{% url 'blog:contact' %}" class="btn btn-primary" >Contact Me</a>
+  <a class="btn btn-outline-primary" href="{% url 'blog:portfolio' %}">My Portfolio</a><br>
+</div>
 		  <br>
  
+
+<!--
+<p>You want to read some interesting write up about what I think and who I am, my journey, struggles and success? then check out these blog posts below. </p>
   <h2>Blog Posts</h2>
 {% if posts %}
 {% for post in posts %}
@@ -40,6 +49,6 @@
 {% else %}
   		
 <article> No posts available </article>
-{% endif %} 	
+{% endif %} 	-->
 	{% endblock %}
 

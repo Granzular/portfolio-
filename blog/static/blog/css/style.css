@@ -2,6 +2,7 @@
 :root{
 	--back:darkslategrey;
 	--electric-blue:#03A9F5; 
+	--primary-color: goldenrod;
 	
 }
 a{
@@ -15,10 +16,9 @@ body {
  font-family:sans-serif;
 	 word-spacing: 5px;
 	letter-spacing: 1px;
-	background-color: white;
+	background-color: #111;
+	color: white;
 }
-
-
 
 
 /*main body, content */
@@ -31,6 +31,16 @@ time{
 	font-weight: bold;
 }
 
+#profile-img{
+	width:18em;
+	height: 20em;
+	border-radius: 50% 70% 30% 20%;
+	border-style: none;
+	margin-right: 2px;
+}
+#section2{
+	
+}
 
 /* Footer */
 footer{
@@ -54,21 +64,31 @@ footer img{
 .btn{
 	display: inline-block;
 	border-style: solid;
-	border-radius: 5px;
+	border-radius: 10px;
 	border-width: 0.1px;
-	min-width: 15em;
+	width: 15em;
 	padding: 8px;
 	margin: 10px;
 	text-align: center;
 
 }
 .btn-primary{
-	background-color: #0d6efd;
+	background-color: goldenrod;
 	color:white;
 	border-style:none ;
 }
 .btn-outline-primary{
-	border-color: #0d6efd ;
+	border-color: goldenrod;
+	color: goldenrod;
+}
+.btn-sec{
+	background-color: var(--electric-blue);
+	color:white;
+	border-style:none ;
+}
+.btn-outline-sec{
+	border-color: var(--electric-blue);
+	color: var(--electric-blue);
 }
 
 .card{
@@ -80,11 +100,15 @@ footer img{
 	box-shadow: 0 0 5px 2px #999;
 	padding:8px;
 	margin: 5px;
+	margin-bottom: 10px;
 	height: max-content;
 	
 }
+.card-body{
+	margin: 5px;
+}
 .boldtext{
-	color: var(--electric-blue);
+	color: var(--primary-color);
 }
 .fg-red{
 	color: red;
@@ -143,6 +167,18 @@ footer img{
 	
 	#message-form{
 		max-width: 50%;
+	}
+	#section1{
+	 flex-direction: row;
+		
+}
+	#profile-img{
+		display: block;
+		margin-left: 200px;
+	}
+	/* desktop responsive adjustment to ui component */
+	.card{
+		padding: 10px;
 	}
 	
 }
