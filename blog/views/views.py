@@ -10,7 +10,8 @@ import json
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from ..utils import auto_mail_reply
-# Create your views here.
+from django.views.decorators.cache import never_cache
+
 
 
 def index(request):
@@ -26,7 +27,7 @@ def about(request):
     context = {"about":about}
     return render(request,"blog/about.html",context)
 
-
+@never_cache
 def contact(request):
 
     if request.method == "POST":
