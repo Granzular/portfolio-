@@ -1,8 +1,8 @@
 {% load static %}
 
         <nav class="navbar">
-<img src="/media/images/favicon.
-png" id="brand-logo"  alt='brand logo'>
+          <a href="/"><img src="/media/images/favicon.
+png" id="brand-logo"  alt='brand logo'></a>
           <a href="/" class="brand-name"></a>
         
 <img   src="{% static 'blog/images/menuicon01.png' %} " id="menu-icon" class="nav-icon" alt="menu">
@@ -11,8 +11,11 @@ png" id="brand-logo"  alt='brand logo'>
           <img src="{% static 'blog/images/close.png' %}" class="nav-icon" id="close-icon">
   <li ><a class="nav-link"  href="/">Home</a></li>
           <li><a class="nav-link" href="{% url 'blog:about' %}"> About</a></li>
-          <li ><a class="nav-link" href="{% url 'blog:portfolio' %}">Portfolio</a></li>
-          <li><a class="nav-link" href="{% url 'blog:contact' %}">Contact</a></li>                    </ul>   
+          <li ><a class="nav-link" href="{% url 'blog:portfolio' %}">My Works</a></li>
+          <li><a class="nav-link" href="{% url 'blog:contact' %}">Contact</a></li>
+          <li ><a class="nav-link" href="{% url 'blog:blog_index' %}">Blog</a></li>
+        </ul>   
            <p class="theme" id="theme-toggle-icon">🌙</p>
+          
   </nav>
    <!-- <a href="/" class="website-name-link"> <h1 class="website-name">GRANZULAR CODEX</h1></a>-->

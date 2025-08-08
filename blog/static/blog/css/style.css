@@ -16,6 +16,8 @@ body {
  font-family:sans-serif;
 	 word-spacing: 5px;
 	letter-spacing: 1px;
+	background-color: #F7F7F7;
+	color: black;
 	/* theme files handle colors for bg and fg*/
 }
 
@@ -37,8 +39,9 @@ time{
 	border-style: none;
 	margin-right: 2px;
 }
-#section2{
-	
+
+.heading{
+	font-size: 30px;
 }
 
 /* Footer */

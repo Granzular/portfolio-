@@ -27,28 +27,9 @@
 <br>
 <div id="section2">
 		<a href="{% url 'blog:contact' %}" class="btn btn-primary" >Contact Me</a>
-  <a class="btn btn-outline-primary" href="{% url 'blog:portfolio' %}">My Portfolio</a><br>
+  <a class="btn btn-outline-primary" href="{% url 'blog:portfolio' %}">My Works</a><br>
 </div>
 		  <br>
  
-
-<!--
-<p>You want to read some interesting write up about what I think and who I am, my journey, struggles and success? then check out these blog posts below. </p>
-  <h2>Blog Posts</h2>
-{% if posts %}
-{% for post in posts %}
-<a href="{% url 'blog:detail' post.id %}" >
-	<article class="card">
-		<strong class="boldtext">{{post.title}}</strong>
-			<hr>
-		<div>{{post.text|safe|truncatewords:20}}</div>
-	</article>
-</a>
-<hr>
-{% endfor %}
-{% else %}
-  		
-<article> No posts available </article>
-{% endif %} 	-->
 	{% endblock %}
 

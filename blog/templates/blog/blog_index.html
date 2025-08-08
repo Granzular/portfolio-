@@ -1,0 +1,25 @@
+{% extends "blog/generic_base.html" %}
+{% block head %}
+<title>Blog</title>{% endblock head %}
+
+{% block content %}
+
+<p>You want to read some interesting write up about what I think and who I am, my journey, struggles and success? then check out these blog posts below. </p>
+  <h2>Blog Posts</h2>
+{% if posts %}
+{% for post in posts %}
+<a href="{% url 'blog:detail' post.id %}" >
+	<article class="card">
+		<strong class="boldtext">{{post.title}}</strong>
+			<hr>
+		<div>{{post.text|safe|truncatewords:20}}</div>
+	</article>
+</a>
+<hr>
+{% endfor %}
+{% else %}
+  		
+<article> No posts available </article>
+{% endif %} 
+
+{% endblock content %}

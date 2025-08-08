@@ -14,9 +14,8 @@ from ..utils import auto_mail_reply
 
 
 def index(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by("-published_date")[:3]
+    #posts = Post.objects.filter(published_date__lte=timezone.now()).order_by("-published_date")[:3]
     context ={
-        "posts":posts
         }
     return render(request,"blog/index.html",context)
 
@@ -47,7 +46,15 @@ def contact(request):
             }
     return render(request,"blog/contact.html",context)
 
-def detail(request,pk):
+def blog_index(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by("-published_date")[:3]
+
+    context = {
+            "posts" : posts,
+            }
+    return render(request,"blog/blog_index.html",context)
+
+def blog_detail(request,pk):
     post = get_object_or_404(Post,pk=pk,published_date__lte=timezone.now())
     context = {
             "post":post
@@ -68,6 +75,8 @@ def resumepdf(request):
     file = get_object_or_404(Resume,pk=1).file
 
     return FileResponse(file,filename='michael_ayeni_resume.pdf')
+
+
     
 
 

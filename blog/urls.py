@@ -8,7 +8,8 @@ urlpatterns =[
     path('',views.index,name='index'),
     path('about/',views.about,name='about'),
     path('contact/',views.contact,name='contact'),
-    path('posts/<pk>/detail/',views.detail,name='detail'),
+    path('blog/posts/',views.blog_index,name='blog_index'),
+    path('posts/<pk>/detail/',views.blog_detail,name='detail'),
     path('portfolio/',views.PortfolioListView.as_view(),name='portfolio'),
     path('portfolio/<pk>/detail/',views.PortfolioDetail.as_view(),name='portfolioDetail'),
 
