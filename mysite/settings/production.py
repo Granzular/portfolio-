@@ -24,22 +24,13 @@ CSRF_TRUSTED_ORIGINS=[
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-        'default':{
-            'ENGINE':'django.db.backends.sqlite3',
-            'NAME':'/home/granzular/granzular.pythonanywhere.com/portfolio-/sqlite3.db'
-            },
-    'main_default': {    
-        'ENGINE': 'django.db.backends.postgresql',
+    'default': {    
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': os.getenv('PGDATABASE'),
         'USER':  os.getenv('PGUSER'),
         'PASSWORD': os.getenv('PGPASSWORD'),
         'HOST': os.getenv('PGHOST'),
         'PORT': os.getenv('PGPORT'),
-
-                'TEST':{
-        'ENGINE':'django.db.backends.sqlite3',
-        'NAME':'testdatabase.db',
-        }
                 }
 }
 

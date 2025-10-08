@@ -6,4 +6,5 @@ typing_extensions==4.12.2
 tzdata==2025.2
 crispy-bootstrap4==2024.10
 django-crispy-forms==2.3
-#pillow==11.3.0
+pillow==11.3.0
+mysqlclient==2.2.7
