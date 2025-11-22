@@ -1,21 +1,28 @@
 body{
-  background-color: #222222;
-  color: white;
+  background-color: #222;
+  color: #eee;
 }
 .navbar, .navbar-ul{
-  background-color: #222222;
+  background-color: #222;
 }
 .nav-link{
-  color: white;
+  color: #ccc;
 }
-.active-link{
-  border-color: goldenrod;
-  color: goldenrod;
+.active-link {
+  text-decoration-line: underline;
+  text-decoration-color: rgb(0,0,200);
+  text-decoration-style: solid;
+  color: rgba(0,0,200,0.9);
 }
-.nav-icon{
+
+.nav-icon,#theme-toggle-icon{
   filter: invert(100%);
 }
+
 #brand-logo{
   background-color: white;
+}
+h1,h2,h3,h4,p{
+  color: #eee;
 }
 

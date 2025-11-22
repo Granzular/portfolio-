@@ -36,6 +36,9 @@
   "image": "https://granzulla.pythonanywhere.com/static/images/portfolio-preview.jpg"
 }
 </script>
+    <!-- tailwindcss and font awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 {% load static %}
 <link rel="stylesheet" href="{% static 'blog/css/style.css'%}"/>
 <link rel="stylesheet" href="{% static 'blog/css/navbar.css' %}" />
@@ -52,9 +55,6 @@
 <script type="text/javascript" src="{% static 'blog/js/navbar.js' %}"></script>
   <script  type="text/javascript" src="{% static 'blog/js/theme.js' %}"></script>
   
-  <!-- tailwindcss and font awesome -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
   
 {% block head %} {% endblock %}
 </head> <body>
@@ -84,14 +84,17 @@
       
     </div>
 
-granzularcodex 
-   <p> copyright©2024 </p>
+    <p class="p-2">granzularcodex</p> 
+   <p class="p-2"> copyright©2024-<span class="" id="year"></span> </p>
 </footer>
 {% block end %}
 {% endblock %}
 
 </body> 
-
+<script type="application/javascript">
+const year = new Date().getFullYear();
+document.querySelector("#year").textContent = year;
+</script>
 </html>
 
 

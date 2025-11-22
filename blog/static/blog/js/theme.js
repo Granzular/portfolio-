@@ -2,6 +2,9 @@ window.addEventListener("load",registerEvents,false);
 
 function registerEvents(e){
     
+    const sun = "/media/images/sun.svg";
+    const moon = "/media/images/moon.svg";
+    
     const toggle_icon = document.querySelector("#theme-toggle-icon");
     
     const theme_link = document.querySelector("#dark-theme");//link tag for dark theme css
@@ -11,18 +14,22 @@ function registerEvents(e){
     /* helper functions definitions */
     
     function init_theme(theme){
+        
         if (theme=="dark-theme"){
             theme_link.disabled = false;
-            toggle_icon.innerHTML = "🌞";
+            toggle_icon.alt = "🌞";
+            toggle_icon.src = sun;
         }
         else if(theme == "light-theme"){
             theme_link.disabled = true;
-            toggle_icon.innerHTML = "🌙";
+            toggle_icon.alt = "🌙";
+            toggle_icon.src = moon;
         }
         else if(theme == null){
             localStorage.setItem("theme","light-theme");
             theme_link.disabled = true;
-            toggle_icon.innerHTML = "🌙";
+            toggle_icon.alt = "🌙";
+            toggle_icon.src = moon;
         }
     }
     
@@ -32,12 +39,14 @@ function registerEvents(e){
         
         if (theme == "dark-theme"){
             theme_link.disabled = true;
-            toggle_icon.innerHTML = "🌙";
+            toggle_icon.alt = "🌙";
+            toggle_icon.src = moon;
             localStorage.setItem("theme","light-theme")
         }
         else if(theme == "light-theme"){
             theme_link.disabled = false;
-            toggle_icon.innerHTML = "🌞";
+            toggle_icon.alt = "🌞";
+            toggle_icon.src = sun;
             localStorage.setItem("theme","dark-theme");
         }
     }
