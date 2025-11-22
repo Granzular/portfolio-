@@ -1,14 +1,12 @@
 /* always remember to add padding-top to the main content Below the navbar*/
 #theme-toggle-icon{
   display: inline-block;
+  width: 25px;
+  height: 25px;
   border-style:none;
   border-radius: 5px;
-  padding: 3px;
   margin: 5px;
-  margin-top: 10px;
-  margin-right: 5px;
-  background-color:#777;
-  font-size: 20px;
+  font-size: 16px;
   float: right;
   
 }
@@ -22,75 +20,95 @@
   font-size: 30px;
   margin: 10px;
 }
-.navbar{
-  padding-bottom: 5px;
-  display: block;
+.top-nav{
+  display: grid;
+  grid-template-columns: 70% 10% 20%;
+  align-items: center;
   height: 55px;
+  width:98%;
+  border-radius: 25px;
   position: fixed;
-  width:100%;
-  left: 0;
-  right: 0;
-  top:0;
-  box-shadow: 0 0 5px 2px #999; 
-  background-color: white;
+  left: 1%;
+  right: 1%;
+  top: 1%;
+  background-color: rgba(0,0,200,0.1);
+  backdrop-filter: blur(16px);
 }
 
-.navbar-ul {
+@keyframes up{
+  from{
+    height: 0vh;
+    opacity: 0;
+  }
+  to{
+    height: 100vh;
+    opacity: 1;
+  }
+}
+.navbar-ul{
   display: none;
   border-style: none;
-  border-radius: 5px;
-  box-shadow: 2px 2px 7px 2px #777;
-  background-color: white;
-  opacity: 100%;
   position: fixed;
   top: 0px;
-  padding-left:10px;
-  padding-right: 5em;
   height: 100vh;
-  width: 30vw;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: rgba(255,255,255,0.9);
+  z-index: 999999;
 }
-
+.navbar-ul{
+  animation-name: up;
+  animation-duration: 0.04s;
+  animation-timing-function: ease-in;
+}
+.navbar-ul ul{
+  display: block;
+  padding-top: 10%;
+  margin: 0;
+  border-style: none;
+  background: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
 .nav-icon{
   margin: 5px;
 }
 #menu-icon{
-  width:40px;
-  height: 40px;
+  width:30px;
+  height: 30px;
   float: right;
   
 }
 #close-icon{
-  width: 20px;
-  height: 20px;
-  margin-bottom: 5px;
-  margin-top: 2px;
-  border-style: solid;
-  border-width:0.5px;
-  border-radius:5px;
-  border-color:#777;
+  width: 30px;
+  height: 30px;
+  border-style: none;
+  position: relative;
+  left: 90%;
   padding: 5px;
   z-index: 2000;
 }
 
 .navbar-ul li{
   list-style: none;
-  padding: 5px;
-  padding-bottom: 10px;
+  margin: 24px;
   letter-spacing: 1px;
 }
 
 .nav-link{
   text-decoration: none;
-  color:black;
+  color:#222;
+  font-size: 30px;
+  font-weight: 480;
 }
 
 .active-link {
-  border-style: solid;
-  border-radius: 5px;
-  padding: 3px;
-  padding-right:1px;
-  padding-left: 1px;
-  border-color: goldenrod;
+  text-decoration-line: underline;
+  text-decoration-color: goldenrod;
+  text-decoration-style: solid; 
   color: goldenrod;
 }
 
@@ -98,12 +116,12 @@
   .nav-icon{
     display: none;
   }
-  .navbar {
+  .top-nav {
     display: flex;
   }
-  .navbar-ul{
+  .navbar-ul ,.navbar-ul ul{
     display:flex;
-    position: static;
+    position: fixed;
     border: none;
     height: 100%;
     width: 100%;

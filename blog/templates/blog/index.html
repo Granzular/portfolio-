@@ -8,28 +8,44 @@
 {% endblock %}
 
   {% block content %}
-<div class="card" id="section1" >
-		<div class="card-body">
+<div class="index-hero m-auto mb-[200px] p-5">
+		<div class="mb-[80px]">
 		
-		<h2>Hi<br>I'm<strong class="boldtext"> Michael Ayeni</strong><br>django developer</h2>
+		<h2 class="text-2xl mt-10 mb-[60px]"><span
+				 class="text-5xl">Hi</span><br>I'm<strong class="text-bold text-orange-500 text-3xl"> Michael Ayeni</strong><br>software developer</h2>
 
 		<p>
-		with a passion for creating quality software.<br><br><em>Turning idea into code, and code into reality</em></p>
-						<br>
+		with a passion for creating quality software.<br><em class="text-gray-600">Turning idea into code, and code into reality</em></p>
 		
-		<a href="{% url 'blog:resumepdf' %}" class="btn btn-outline-sec">Download Resume</a>
+		<a href="{% url 'blog:resumepdf' %}" class="bg-blue-500 text-white rounded font-bold block m-auto mt-[80px] mb-[50px] p-4 text-center">Download Resume</a>
 
 		</div>
-		<div class="card-img">
+		<div class="card-img mb-10">
 				<img src="/media/images/profile_pic.jpg" id="profile-img" alt="my profile picture">
-		</div>                              
+		</div>
+		<div class="mt-5">
+		<a href="{% url 'blog:contact' %}" class="rounded bg-orange-500 text-white font-bold p-4" >Contact Me</a>
+  <a class="rounded border-2 border-[#222] bg-[rgba(255,255,255,0.4)] font-bold p-4" href="{% url 'blog:portfolio' %}">My Works</a><br>
 </div>
-<br>
-<div id="section2">
-		<a href="{% url 'blog:contact' %}" class="btn btn-primary" >Contact Me</a>
-  <a class="btn btn-outline-primary" href="{% url 'blog:portfolio' %}">My Works</a><br>
 </div>
-		  <br>
- 
+	
+<div class="index-about m-auto mb-10 p-4 pt-10 bg-gray-200" id="about">
+<h2 class="heading text-center text-4xl font-bold mb-8"> About</h2>
+		 
+{% if about %}
+<article class="m-auto font-[450] text-[18px] text-[#444]">
+{{about.text|safe|truncatewords:50}}
+
+<a class="text-center text-white block rounded p-4 m-5 bg-blue-500 font-bold" href="{% url 'blog:about' %}">Learn More</a>
+  </article>
+{% else %}
+No about
+{% endif %}
+</div>
+
+<div class="bg-blue-100">
+		 <h2>Articles</h2>
+		 <hr>
+</div>
 	{% endblock %}
 

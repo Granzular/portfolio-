@@ -1,19 +1,17 @@
 /* General body rule*/
 :root{
-	--back:darkslategrey;
+	--back:#333;
 	--electric-blue:#03A9F5; 
-	--primary-color: goldenrod;
+	--primary-color: rgb(146, 49, 147)/* rgb(35, 25, 41)*/;
 	
 }
 a{
 	text-decoration: none;
-	color: var(--electric-blue);
-	
 }
 body {
  margin:0;
 	padding:5px;
- font-family:sans-serif;
+ font-family: "Helvetica";
 	 word-spacing: 5px;
 	letter-spacing: 1px;
 	background-color: #F7F7F7;
@@ -40,9 +38,6 @@ time{
 	margin-right: 2px;
 }
 
-.heading{
-	font-size: 30px;
-}
 
 /* Footer */
 footer{
@@ -61,7 +56,10 @@ footer img{
     border-color:white;
 	    background-color:var(--electric-blue);
 }
-
+.index-hero{
+	    margin-bottom: 100px;
+}
+.index-about{}
 /* reusable ui component classes*/
 .btn{
 	display: inline-block;
@@ -73,47 +71,6 @@ footer img{
 	margin: 10px;
 	text-align: center;
 
-}
-.btn-primary{
-	background-color: goldenrod;
-	color:white;
-	border-style:none ;
-}
-.btn-outline-primary{
-	border-color: goldenrod;
-	color: goldenrod;
-}
-.btn-sec{
-	background-color: var(--electric-blue);
-	color:white;
-	border-style:none ;
-}
-.btn-outline-sec{
-	border-color: var(--electric-blue);
-	color: var(--electric-blue);
-}
-
-.card{
-	display: flex;
-	flex-direction: column;
-	border-style: none;
-	border-width: 1px;
-	border-radius: 5px;
-	box-shadow: 0 0 5px 2px #999;
-	padding:8px;
-	margin: 5px;
-	margin-bottom: 10px;
-	height: max-content;
-	
-}
-.card-body{
-	margin: 5px;
-}
-.boldtext{
-	color: var(--primary-color);
-}
-.fg-red{
-	color: red;
 }
 
 #message-form{

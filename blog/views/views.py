@@ -16,8 +16,13 @@ from django.views.decorators.cache import never_cache
 
 def index(request):
     #posts = Post.objects.filter(published_date__lte=timezone.now()).order_by("-published_date")[:3]
-    context ={
-        }
+    about = About.objects.all()
+    about = None if len(about)==0 else about[0]
+
+    context = {
+            "about" : about
+            }
+
     return render(request,"blog/index.html",context)
 
 
