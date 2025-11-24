@@ -50,12 +50,13 @@ EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_TIMEOUT = 60 * 2
 
+"""
 # Cache
 # Custom code. Database Cache and Cache Middleware
 
 MIDDLEWARE.append('django.middleware.cache.UpdateCacheMiddleware')
 MIDDLEWARE.append('django.middleware.cache.FetchFromCacheMiddleware')
-
+ 
 CACHES = {                                                "default":{
             "BACKEND": "django.core.cache.backends.db.DatabaseCache",
             "LOCATION": "my_cache_table",
@@ -64,3 +65,4 @@ CACHES = {                                                "default":{
 CACHE_MIDDLEWARE_ALIAS = "default"
 CACHE_MIDDLEWARE_SECONDS = 60 * 15
 CACHE_MIDDLEWARE_KEY_PREFIX = "portfolio-"
+"""
