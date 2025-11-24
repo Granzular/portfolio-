@@ -10,9 +10,9 @@ body{
 }
 .active-link {
   text-decoration-line: underline;
-  text-decoration-color: rgb(0,0,200);
+  text-decoration-color: rgb(0,200,0);
   text-decoration-style: solid;
-  color: rgba(0,0,200,0.9);
+  color: rgba(0,200,0,0.9);
 }
 
 .nav-icon,#theme-toggle-icon{

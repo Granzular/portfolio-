@@ -14,7 +14,7 @@ body {
  font-family: "Helvetica";
 	 word-spacing: 5px;
 	letter-spacing: 1px;
-	background-color: #F7F7F7;
+	background-color: #F2F2F2;
 	color: black;
 	/* theme files handle colors for bg and fg*/
 }
@@ -60,36 +60,31 @@ footer img{
 	    margin-bottom: 100px;
 }
 .index-about{}
-/* reusable ui component classes*/
-.btn{
-	display: inline-block;
-	border-style: solid;
-	border-radius: 10px;
-	border-width: 0.1px;
-	width: 15em;
-	padding: 8px;
-	margin: 10px;
-	text-align: center;
-
-}
 
 #message-form{
-	display: flex;
-	flex-direction: column;
+	display: block;
 	border-style: none;
 	border-radius: 5px;
-	margin:5px;
+	width: 90%;
+	margin: auto;
 	margin-top: 20px;
 	padding: 10px;
-	box-shadow: 0 0 5px 2px #999;
 }
 .form-control{
-	box-sizing: border-box;
+	display: block;
 	width: 90%;
-	margin: 10px;
+	margin: auto;
 	border-radius: 5px;
 	border-width: 1px;
-	
+	border-color: rgba(0,255,0,0.5);
+	background-color: rgba(255,255,255,0.1);
+}
+.form-control::placeholder{
+	padding: 5px;
+}
+.form-control:focus{
+	outline-color: rgba(0,0,255,0.5);
+	outline-width: 1px;
 }
 .text-input{
 	height: 3em;

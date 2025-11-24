@@ -10,8 +10,8 @@ urlpatterns =[
     path('contact/',views.contact,name='contact'),
     path('blog/posts/',views.blog_index,name='blog_index'),
     path('posts/<pk>/detail/',views.blog_detail,name='detail'),
-    path('portfolio/',views.PortfolioListView.as_view(),name='portfolio'),
-    path('portfolio/<pk>/detail/',views.PortfolioDetail.as_view(),name='portfolioDetail'),
+    path('projects/',views.ProjectListView.as_view(),name='projects'),
+    path('projects/<pk>/detail/',views.ProjectDetail.as_view(),name='project-detail'),
 
         path('ajaxIndex/',ajax_views.ajaxIndex,name="ajaxIndex"),
         path('resume/pdf/',views.resumepdf,name='resumepdf'),

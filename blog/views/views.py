@@ -69,14 +69,14 @@ def blog_detail(request,pk):
             }
     return render(request,"blog/detail.html",context)
 
-class PortfolioListView(ListView):
+class ProjectListView(ListView):
     model = Project
-    template_name = 'blog/portfolio.html'
+    template_name = 'blog/projects.html'
     context_object_name = 'projects'
 
-class PortfolioDetail(DetailView):
+class ProjectDetail(DetailView):
     model = Project
-    template_name = 'blog/portfolioDetail.html'
+    template_name = 'blog/project_detail.html'
     context_object_name = 'project'
 
 def resumepdf(request):

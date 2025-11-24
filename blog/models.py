@@ -68,7 +68,7 @@ class Project(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog:portfolioDetail',kwargs = {'pk':self.pk})
+        return reverse('blog:project-detail',kwargs = {'pk':self.pk})
 
     def get_technologies_used_list(self):
         return self.technologies_used.split(',')
