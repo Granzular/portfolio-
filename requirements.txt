@@ -8,3 +8,5 @@ crispy-bootstrap4==2024.10
 django-crispy-forms==2.3
 pillow==11.3.0
 mysqlclient==2.2.7
+django-markdownx==4.0.9
+markdown==3.10

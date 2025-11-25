@@ -7,10 +7,10 @@ if SECRET_KEY == None:
     SECRET_KEY = os.getenv('SECRET_KEY')
  
 
-DEBUG = True
+DEBUG = False
 
 web_host = 'granzular.pythonanywhere.com'
-ALLOWED_HOSTS = [web_host,'*']
+ALLOWED_HOSTS = [web_host]
 
 
 CSRF_TRUSTED_ORIGINS=[
