@@ -11,7 +11,6 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from ..utils import auto_mail_reply
 from django.views.decorators.cache import never_cache
-import markdown
 
 
 
@@ -19,7 +18,6 @@ def index(request):
     about = About.objects.all()
     about = None if len(about)==0 else about[0]
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by("-published_date")[:3]
-    #html_content = markdown.markdown(post.content,extensions=['fenced_code', 'codehilite', 'toc'])
 
     context = {
             "about" : about,
@@ -65,11 +63,8 @@ def blog_index(request):
 
 def blog_detail(request,pk):
     post = get_object_or_404(Post,pk=pk,published_date__lte=timezone.now())
-    html_content = markdown.markdown(post.text,extensions=['fenced_code', 'codehilite', 'toc', 'tables'])
-
     context = {
             "post":post,
-            "postmd" : html_content
             }
     return render(request,"blog/detail.html",context)
 

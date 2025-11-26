@@ -6,11 +6,11 @@
 {% block content %}
 <h2 class="font-bold text-4xl text-center mb-10"> About</h2>
 {% if about %}
-<article class="text-[20px] mb-10 text-center">
+<article class="text-[20px] mb-10 text-center dark:text-[#eee]">
 {{about.text|safe}}
   </article>
 <a class="block p-3 m-auto rounded-[25px] text-[#fff] bg-green-500 font-bold text-[16px] text-center" href="{% url 'blog:contact' %}">Get In Touch</a>
 {% else %}
-No about
+<div class="alert alert-warning" > No about</div>
 {% endif %}
 {% endblock %}

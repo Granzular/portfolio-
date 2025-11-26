@@ -38,3 +38,7 @@ logfile
 #vim
 .swp
 *.tmp
+
+# node
+node_modules/
+

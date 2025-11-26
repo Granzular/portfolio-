@@ -7,7 +7,7 @@ function registerEvents(e){
     
     const toggle_icon = document.querySelector("#theme-toggle-icon");
     
-    const theme_link = document.querySelector("#dark-theme");//link tag for dark theme css
+    const root = document.querySelector("html");
     init_theme(localStorage.getItem("theme"));
     toggle_icon.addEventListener("click",toggle_theme,false);
     
@@ -16,18 +16,18 @@ function registerEvents(e){
     function init_theme(theme){
         
         if (theme=="dark-theme"){
-            theme_link.disabled = false;
+            root.classList.add("dark");
             toggle_icon.alt = "🌞";
             toggle_icon.src = sun;
         }
         else if(theme == "light-theme"){
-            theme_link.disabled = true;
+            root.classList.remove("dark");
             toggle_icon.alt = "🌙";
             toggle_icon.src = moon;
         }
         else if(theme == null){
             localStorage.setItem("theme","light-theme");
-            theme_link.disabled = true;
+            root.classList.remove("dark");
             toggle_icon.alt = "🌙";
             toggle_icon.src = moon;
         }
@@ -38,13 +38,13 @@ function registerEvents(e){
         let theme = localStorage.getItem("theme");
         
         if (theme == "dark-theme"){
-            theme_link.disabled = true;
+            root.classList.remove("dark");
             toggle_icon.alt = "🌙";
             toggle_icon.src = moon;
             localStorage.setItem("theme","light-theme")
         }
         else if(theme == "light-theme"){
-            theme_link.disabled = false;
+            root.classList.add("dark");
             toggle_icon.alt = "🌞";
             toggle_icon.src = sun;
             localStorage.setItem("theme","dark-theme");

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
+import markdown
 
 STATUS_CHOICES = (
         ('unread','unread'),
@@ -32,6 +33,9 @@ class Post(models.Model):
             return True
         else:
             return False
+    
+    def parse_md(self):
+        return markdown.markdown(self.text,extensions=['fenced_code', 'codehilite', 'toc', 'tables'])
 
 
     class Meta:
@@ -39,6 +43,13 @@ class Post(models.Model):
 
 class About(models.Model):
     text = models.TextField()
+
+    def __str__(self):
+        return f"About -- {self.id}"
+
+    def parse_md(self):
+        return markdown.markdown(self.text,extensions=['fenced_code', 'codehilite', 'toc', 'tables'])
+
 
 
 class Contact(models.Model):

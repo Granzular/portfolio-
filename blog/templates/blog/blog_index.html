@@ -10,9 +10,10 @@
 {% for post in posts %}
 <a href="{% url 'blog:detail' post.id %}" >
 	<article class="card">
-		<strong class="boldtext">{{post.title}}</strong>
+		<h3 class="text-[#777] font-bold mb-2 text-[22px]">{{post.title}}</h3>
 			<hr>
-		<div>{{post.text|safe|truncatewords:20}}</div>
+		<div class="prose dark:text-[#eee]" >{{post.parse_md|safe|truncatewords:20}}</div>
+		 <a href="{% url 'blog:detail' post.id %}" class="block text-center w-1/2 rounded-[25px] text-[#eee] bg-blue-500 m-3 p-3 ml-[45%] font-bold">Read more</a>
 	</article>
 </a>
 <hr>

@@ -7,11 +7,11 @@
 {% block content %}
 <a href="/" style="font-size:20px; width:5em;" class="text-blue-500 hover:underline block mb-[50px]">  << back </a>
 <article class="card">
-  <h2 class="text-2xl" >{{post.title}}</h2>
+  <h1 class="text-3xl mb-5" >{{post.title}}</h1>
   <time class="mb-5 block">published: {{post.published_date}}
   </time>
   <div class="prose">
-  {{postmd|safe}}
+  {{post.parse_md|safe}}
   </div>
 </article>
 

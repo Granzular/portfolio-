@@ -1,4 +1,7 @@
-<!DOCTYPE html> <html> <head>
+<!DOCTYPE html> 
+
+<html> 
+	<head>
   <meta http-equiv="CONTENT-TYPE"content="text/html; charset=UTF-8">
 
   <meta name="viewport"content="width=device-width,initial-scale=1.0">
@@ -13,7 +16,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Michael Ayeni – Software Developer Portfolio">
-<meta property="og:description" content="Portfolio of Michael Ayeni, a Django and Python developer building practical, real-world applications with clean architecture and strong backend skills.">
+<meta property="og:description" content="Portfolio of Michael Ayeni, a Fullstack Software developer building practical, real-world applications with clean architecture and strong backend skills.">
 <meta property="og:image" content="https://granzular.pythonanywhere.com/static/images/portfolio-preview.jpg">
 <meta property="og:url" content="https://granzular.pythonanywhere.com">
 <meta property="og:type" content="website">
@@ -35,14 +38,14 @@
   "description": "Software developer skilled in Django, Python, React, and backend-focused engineering. Builder of Vendora and other practical web applications.",
   "image": "https://granzulla.pythonanywhere.com/static/images/portfolio-preview.jpg"
 }
+{% load static %}
 </script>
     <!-- tailwindcss and font awesome -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'blog/src/output.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 {% load static %}
 <link rel="stylesheet" href="{% static 'blog/css/style.css'%}"/>
 <link rel="stylesheet" href="{% static 'blog/css/navbar.css' %}" />
-  <link id="dark-theme" disabled rel="stylesheet" href="{% static 'blog/css/dark-theme.css' %}" />
 
 
 <link rel="icon" type="image/png" href="/media/images/favicon.jpg"/>
@@ -57,7 +60,9 @@
   
   
 {% block head %} {% endblock %}
-</head> <body>
+</head> 
+
+<body class="dark:text-[#eee] dark:bg-[#222]" >
   <header>
 	  {% include 'blog/navbar.html'   %}
   </header>
