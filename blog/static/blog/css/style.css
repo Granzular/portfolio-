@@ -8,6 +8,10 @@
 a{
 	text-decoration: none;
 }
+.prose a{
+color: skyblue;
+}
+
 body {
  margin:0;
 	padding:5px;
@@ -15,8 +19,6 @@ body {
 	 word-spacing: 5px;
 	letter-spacing: 1px;
 	background-color: #F2F2F2;
-	color: black;
-	/* theme files handle colors for bg and fg*/
 }
 
 
@@ -56,10 +58,7 @@ footer img{
     border-color:white;
 	    background-color:var(--electric-blue);
 }
-.index-hero{
-	    margin-bottom: 100px;
-}
-.index-about{}
+
 
 #message-form{
 	display: block;

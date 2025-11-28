@@ -54,18 +54,9 @@ class About(models.Model):
 
 class Contact(models.Model):
     info = models.TextField() 
-    socials = models.TextField()
-    additional_info = models.TextField()
-
-
-    def get_additional_info_list(self):
-        return self.additional_info.split(',')
-
-    def get_socials_list(self):
-        return self.socials.split(',')
-
-    def get_info_list(self):
-        return self.info.split(',')
+    
+    def parse_md(self):
+        return markdown.markdown(self.info,extensions=['fenced_code', 'codehilite', 'toc', 'tables'])
 
 
 class Project(models.Model):

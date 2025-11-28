@@ -5,20 +5,20 @@
           <a id="logo-a" href="/"><img src="/media/images/favicon.jpg" class="inline-block" id="brand-logo"  alt='brand logo'></a>
         
           
-        <div class="navbar-ul" id="navbar-ul" >
+        <div class="navbar-ul bg-[rgba(255,255,255,1)] dark:bg-[#333]" id="navbar-ul" >
           
-          <img src="{% static 'blog/images/close.png' %}" class="nav-icon" id="close-icon">
+          <img src="{% static 'blog/images/close.png' %}" class="dark:invert nav-icon" id="close-icon">
           <ul>
-  <li ><a class="nav-link"  href="/">Home</a></li>
-          <li><a class="nav-link" href="{% url 'blog:about' %}"> About</a></li>
-          <li ><a class="nav-link" href="{% url 'blog:projects' %}">My Works</a></li>
-          <li><a class="nav-link" href="{% url 'blog:contact' %}">Contact</a></li>
-          <li ><a class="nav-link" href="{% url 'blog:blog_index' %}">Blog</a></li>
+  <li ><a class="nav-link dark:text-[#eee]"  href="/">Home</a></li>
+          <li><a class="nav-link dark:text-[#eee] " href="{% url 'blog:about' %}"> About</a></li>
+          <li ><a class="nav-link dark:text-[#eee] " href="{% url 'blog:projects' %}">My Works</a></li>
+          <li><a class="nav-link dark:text-[#eee] " href="{% url 'blog:contact' %}">Contact</a></li>
+          <li ><a class="nav-link dark:text-[#eee] " href="{% url 'blog:blog_index' %}">Blog</a></li>
         </ul>   
         </div>
           
-          <img id="theme-toggle-icon" src="/media/images/moon.svg" alt="🌙">
-          <img   src="{% static 'blog/images/menuicon01.png' %} " id="menu-icon" class="nav-icon" alt="menu">
+          <img class="dark:invert" id="theme-toggle-icon" src="/media/images/moon.svg" alt="🌙">
+          <img   src="{% static 'blog/images/menuicon01.png' %} " id="menu-icon" class="dark:invert nav-icon" alt="menu">
           
   </nav>
    <!-- <a href="/" class="website-name-link"> <h1 class="website-name">GRANZULAR CODEX</h1></a>-->

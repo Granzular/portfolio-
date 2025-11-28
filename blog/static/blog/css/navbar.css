@@ -1,7 +1,5 @@
 /* always remember to add padding-top to the main content Below the navbar*/
-p{
-  color: #333;
-}
+
 #theme-toggle-icon{
   display: inline-block;
   width: 25px;
@@ -58,8 +56,7 @@ p{
   width: 100vw;
   padding: 0;
   margin: 0;
-  text-align: center;
-  background-color: rgba(255,255,255,1);
+  text-align: center; 
   z-index: 999999;
   animation-name: up;
   animation-duration: 0.05s;
@@ -101,7 +98,6 @@ p{
 
 .nav-link{
   text-decoration: none;
-  color:#222;
   font-size: 30px;
   font-weight: 480;
 }

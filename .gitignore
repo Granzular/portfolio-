@@ -42,3 +42,6 @@ logfile
 # node
 node_modules/
 
+#media
+media/
+

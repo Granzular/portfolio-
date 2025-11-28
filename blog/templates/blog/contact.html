@@ -10,20 +10,17 @@
 {% endblock %}
 
 {% block content %}
-<h2 class="heading" >Contact Me</h2>
+<h2 class="text-center text-3xl font-bold mt-5 mb-[30px]" >Contact Me</h2>
 {% if contact %}
-
-<strong>Phone and Mail</strong>
-{% for info in contact.get_info_list %}
-<p>{{info|safe|urlize}}</p>
-{% endfor %}
-<br>
-<strong>Socials and Repo</strong>
-{% for social in contact.get_socials_list %}               <p>{{social|safe}}</p>
-{% endfor %}
-<br>
-<em>{{contact.additional_info}}</em>
-<br>
+<section class="p-2 mb-[60px] prose dark:prose-invert">
+  {{contact.parse_md|safe}}
+</section>
+{% else %}
+<div class="alert alert-warning mt-8 mb-[60px]">
+No Contact info available
+</div>
+{% endif %}
+ 
 <form class="form" id='message-form' method='POST'>
 	<b>Send A Message</b>
 	<div id="alert-box">
@@ -45,7 +42,4 @@
 		<div>
 </form>
 
-{% else %}
-No Contact
-{% endif %}
 {% endblock %}
