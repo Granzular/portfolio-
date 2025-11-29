@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
+from django.utils.text import slugify
 import markdown
 
 STATUS_CHOICES = (
@@ -10,13 +11,28 @@ STATUS_CHOICES = (
         ('completed','completed'),
         )
 
+
 class Post(models.Model):
     
     author = models.ForeignKey(User,on_delete = models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
+    slug = models.SlugField(max_length=250,unique=True, null=True, blank=True)
     created_date = models.DateTimeField(default = timezone.now)
     published_date = models.DateTimeField(blank=True,null=True)
+
+    def save(self,*args,**kwargs):
+        if not self.slug:
+            base_slug = slugify(self.title)
+            slug = base_slug
+            counter = 0
+
+            while Post.objects.filter(slug=slug).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+            self.slug = slug
+        super().save(*args, **kwargs)
+
 
     def publish(self):
         self.published_date = timezone.now()
@@ -61,22 +77,36 @@ class Contact(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=250)
+    slug = models.SlugField(max_length=300,unique=True,blank=True,null=True)
     description = models.TextField()
     image = models.ImageField(upload_to='projects',blank=True)
     technologies_used = models.CharField(max_length=500)
-    links = models.CharField(max_length=500,blank=True)
+    github = models.CharField(max_length=500,blank=True)
+    demo = models.CharField(max_length=500,blank=True)
+    featured = models.BooleanField(default=False)
+
+    def save(self,*args,**kwargs):
+        if not self.slug:
+            base_slug = slugify(self.title)
+            slug = base_slug
+            counter = 0
+
+            while Post.objects.filter(slug=slug).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+            self.slug = slug
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog:project-detail',kwargs = {'pk':self.pk})
+        return reverse('blog:project-detail',kwargs = {'slug':self.slug})
 
     def get_technologies_used_list(self):
         return self.technologies_used.split(',')
 
-    def get_links_list(self):
-        return self.links.split(',')
+
 
 class ClientMessage(models.Model):
     email = models.EmailField()

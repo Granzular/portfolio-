@@ -61,8 +61,8 @@ def blog_index(request):
             }
     return render(request,"blog/blog_index.html",context)
 
-def blog_detail(request,pk):
-    post = get_object_or_404(Post,pk=pk,published_date__lte=timezone.now())
+def blog_detail(request,slug):
+    post = get_object_or_404(Post,slug=slug,published_date__lte=timezone.now())
     context = {
             "post":post,
             }

@@ -9,9 +9,9 @@ urlpatterns =[
     path('about/',views.about,name='about'),
     path('contact/',views.contact,name='contact'),
     path('blog/posts/',views.blog_index,name='blog_index'),
-    path('posts/<pk>/detail/',views.blog_detail,name='detail'),
+    path('posts/<slug:slug>/detail/',views.blog_detail,name='detail'),
     path('projects/',views.ProjectListView.as_view(),name='projects'),
-    path('projects/<pk>/detail/',views.ProjectDetail.as_view(),name='project-detail'),
+    path('projects/<slug:slug>/detail/',views.ProjectDetail.as_view(),name='project-detail'),
 
         path('ajaxIndex/',ajax_views.ajaxIndex,name="ajaxIndex"),
         path('resume/pdf/',views.resumepdf,name='resumepdf'),

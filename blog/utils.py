@@ -67,3 +67,17 @@ def auto_mail_reply(recipient):
     msg = EmailMultiAlternatives(subject, text_content, from_email, to)
     msg.attach_alternative(html_content, "text/html")
     msg.send()
+
+def get_tech_logos()-> dict:
+    logo_dict = {"python" : "[![Python](https://img.icons8.com/color/96/python.png)](https://www.python.org)",
+                 "django" : "[![Django](https://img.icons8.com/color/96/django.png)](https://www.djangoproject.com)",
+                 "javascript" : "[![JavaScript](https://img.icons8.com/color/96/javascript.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)",
+                 "react" : "[![React](https://img.icons8.com/color/96/react-native.png)](https://react.dev)",
+                 "nextjs" : "[![Next.js](https://img.icons8.com/color/96/nextjs.png)](https://nextjs.org)",
+                 "postgres" : "[![PostgreSQL](https://img.icons8.com/color/96/postgresql.png)](https://www.postgresql.org)",
+                 "mysql" : "[![MySQL](https://img.icons8.com/color/96/mysql-logo.png)](https://www.mysql.com)",
+                 "redis" : "[![Redis](https://img.icons8.com/color/96/redis.png)](https://redis.io)",
+                 "linux" : "[![Linux](https://img.icons8.com/color/96/linux.png)](https://www.kernel.org)",
+                 "git" : "[![Git](https://img.icons8.com/color/96/git.png)](https://git-scm.com)",
+                             }
+    return logo_dict
