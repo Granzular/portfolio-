@@ -117,15 +117,11 @@
     display: flex;
   }
   .navbar-ul ,.navbar-ul ul{
-    display:flex;
-    position: fixed;
+    display: flex;
     border: none;
     height: 100%;
-    width: 100%;
     box-shadow: none;
-    margin: 0;
-    padding-left: 40vw;
-    opacity: none;
+    background: none;
   }
   .navbar-ul li{
     margin-right: 5px;

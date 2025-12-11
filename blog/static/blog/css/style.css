@@ -5,6 +5,23 @@
 	--primary-color: rgb(146, 49, 147)/* rgb(35, 25, 41)*/;
 	
 }
+
+@keyframes ghost{
+	from{ 
+		opacity: 0.2;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+div::focus{
+	animation-name: ghost;
+	animation-duration: 0.8s;
+	animation-timing-function: ease;
+
+}
+
 a{
 	text-decoration: none;
 }
@@ -21,6 +38,15 @@ body {
 	background-color: #F2F2F2;
 }
 
+.anim{
+	opacity: 0;
+	transform: translateY(40px);
+	transition: 0.6s ease;
+}
+.anim.show {
+	opacity: 1;
+	transform: translateY(0);
+}
 
 /*main body, content */
 main {

@@ -6,10 +6,10 @@
 {% block content %}
 <h2 class="font-bold text-4xl text-center mb-10"> About</h2>
 {% if about %}
-<article class="prose dark:prose-invert text-[18px] mb-[60px]">
+<article class="prose dark:prose-invert text-[18px] mb-[60px] anim">
 {{about.parse_md|safe}}
   </article>
-<a class="block p-3 m-auto rounded-[25px] text-[#fff] bg-green-500 font-bold text-[16px] text-center" href="{% url 'blog:contact' %}">Get In Touch</a>
+<a class="block p-3 m-auto rounded-[25px] text-[#fff] bg-green-500 font-bold text-[16px] text-center anim" href="{% url 'blog:contact' %}">Get In Touch</a>
 {% else %}
 <div class="alert alert-warning" > No about</div>
 {% endif %}

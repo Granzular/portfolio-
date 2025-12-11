@@ -7,7 +7,7 @@
   </script>
 {% endblock %}
   {% block content %}
-<div class="index-hero m-auto mb-[200px] p-5">
+<div class="index-hero m-auto mb-[200px] p-5 anim">
 		<div class="mb-[80px]">
 		
 		<h2 class="text-2xl mt-10 mb-[60px]"><span
@@ -19,16 +19,16 @@
 		<a href="{% url 'blog:resumepdf' %}" class="bg-blue-500 text-white rounded-[25px] font-bold block m-auto mt-[40px] mb-[50px] p-4 text-center">Download Resume</a>
 
 		</div>
-		<div class="card-img mb-10">
+		<div class="card-img mb-10 anim">
 				<img src="/media/images/profile_pic.jpg" id="profile-img" alt="my profile picture">
 		</div>
-		<div class="mt-5">
+		<div class="mt-5 anim">
 		<a href="{% url 'blog:contact' %}" class="rounded-[25px] bg-green-500 text-white font-bold p-4" >Contact Me</a>
   <a class="rounded-[25px] border-[1px] border-[#222] bg-[rgba(255,255,255,0.3)] font-bold p-4" href="{% url 'blog:projects' %}">My Works</a><br>
 </div>
 </div>
 	
-<div class="index-about m-auto mb-[200px] p-4 pt-10 bg-gray-800" id="about">
+<div class="index-about m-auto mb-[200px] p-4 pt-10 bg-gray-800 anim" id="about">
 <h2 class="heading text-center text-4xl font-bold mb-8 text-blue-300"> About</h2>
 		 
 {% if about %}
@@ -38,12 +38,12 @@
 <a class="text-center text-white block rounded-[25px] p-3 m-5 bg-blue-500 font-bold" href="{% url 'blog:about' %}">Learn More</a>
   </article>
 {% else %}
-<div class="alert alert-warning">No about</div>
+<div class="alert alert-warning anim">No about</div>
 {% endif %}
 </div>
 
 
-<div class="">
+<div class="anim">
 		 <h2 class=" text-center text-3xl font-[450] p-4">Articles</h2>
 		 <hr class="border-[rgba(0,255,0,0.4)] border-2 mb-2">
 		 <p class="font-mono font-extrabold text-6xl text-green-500 text-center m-2 mb-4">...</p>
@@ -51,16 +51,16 @@
 		 
 		 {% if posts %}
 		 {% for post in posts %}
-	<article class="border-1 text-[rgba(255,255,255,0.4)] p-1 mb-10">
+	<article class="border-1 text-[rgba(255,255,255,0.4)] p-1 mb-10 anim">
 		<h3 class="text-[#333] dark:text-[#ccc] font-bold mb-2 text-[22px]">{{post.title}}</h3>
 		
-		<div class="prose dark:prose-invert">{{post.parse_md|safe|truncatewords:20}}</div>
+		<div class="prose dark:prose-invert anim">{{post.parse_md|safe|truncatewords:20}}</div>
 			 <a href="{% url 'blog:detail' post.slug %}" class="block text-center w-1/2 rounded-[25px] text-[#eee] bg-blue-500 m-3 p-3 ml-[45%] font-bold">Read more</a>
 	</article>
 
 {% endfor %}
 		 {% else %}
-		 <div class="alert alert-warning" >No posts available </div>
+		 <div class="alert alert-warning anim" >No posts available </div>
 		 {% endif %}
 </div>
 	{% endblock %}
